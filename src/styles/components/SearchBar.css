@@ -1,0 +1,28 @@
+.isHome {
+  width: 100%;
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 30px;
+  margin: 2% 5%;
+
+  padding: 0px 6px;
+  outline: none;
+  background-color: #444054;
+
+  border-color: #444054;
+
+  box-shadow: 0 0.125rem 0.625rem rgb(68 64 84 / 40%),
+    0 0.0625rem 0.125rem rgb(68 64 84 / 50%);
+
+  opacity: 0.9 !important;
+}
+::placeholder {
+  color: white;
+}

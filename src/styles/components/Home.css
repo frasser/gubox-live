@@ -1,0 +1,111 @@
+/*.hero{
+    background: #23475b;
+    color: white;
+    padding: 32px 15px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+}*/
+.main {
+  /* position asolute lo restringe a la mitad de la pantalla*/
+  position: relative;
+  top: 10vh;
+  padding: 0em;
+  margin-left: 0;
+  bottom: 0;
+  /*overflow-y: auto;*/
+  color: white;
+  transition: margin-left 0.5s ease-in-out;
+  /*display: grid;*/
+  /*grid-template-columns: minmax(auto, 1024px);
+  justify-content: center;*/
+}
+.mainMin {
+  /* position asolute lo restringe a la mitad de la pantalla*/
+  position: relative;
+  top: 10vh;
+  padding: 0em;
+  margin-left: 70px;
+  bottom: 0;
+  /*overflow-y: auto;*/
+  color: white;
+  transition: margin-left 0.5s ease-in-out;
+}
+.mainOpen {
+  /* position asolute lo restringe a la mitad de la pantalla*/
+  position: relative;
+  top: 10vh;
+  padding: 0em;
+  margin-left: 240px;
+  bottom: 0;
+  /*overflow-y: auto;*/
+  color: white;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+/**************************************************************************************/
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(23, 5vh);
+  /*height: 25vh;*/
+  grid-gap: 2px;
+  /*overflow: hidden;*/
+}
+
+.main-items:nth-of-type(1) {
+  grid-column: 1 / span 8;
+  grid-row: 1 / span 3;
+}
+.main-items:nth-of-type(2) {
+  grid-column: 1 / span 8;
+  grid-row: 4 / span 9;
+
+  background-color: blue;
+}
+.main-items:nth-of-type(3) {
+  grid-column: 1 / span 8;
+  grid-row: 13 / span 8;
+}
+.main-items:nth-of-type(4) {
+  grid-column: 1 / span 8;
+  grid-row: 21 / span 23;
+}
+
+@media (min-width: 320px) {
+  .mainMin {
+    margin-left: 0px !important;
+  }
+}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  .mainMin {
+    margin-left: 70px !important;
+  }
+  .main-container {
+    grid-template-rows: repeat(16, 5vh);
+  }
+  .main-items:nth-of-type(1) {
+    grid-column: 6 / span 8;
+    grid-row: 1 / span 5;
+  }
+  .main-items:nth-of-type(2) {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 11;
+    margin: 5px;
+
+    background-color: blue;
+  }
+  .main-items:nth-of-type(3) {
+    grid-column: 1 / span 5;
+    grid-row: 12 / span 18;
+
+    margin-bottom: 10px;
+  }
+  .main-items:nth-of-type(4) {
+    grid-column: 6 / span 8;
+    grid-row: 6 / span 17;
+  }
+}
