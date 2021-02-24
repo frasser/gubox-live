@@ -35,7 +35,7 @@ const Home = () => {
 }*/
 
 
-    console.log("home",side_state[1]);
+    
 
    // let drawerClass = [];
     let mainClass = [];
@@ -55,7 +55,7 @@ const Home = () => {
     }else{
         mainClass.push("mainMin");
     }
-    console.log(mainClass);
+    
 
     return (
         

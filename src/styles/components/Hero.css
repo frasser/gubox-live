@@ -124,8 +124,8 @@ p {
 
 /******************************************************************************/
 .jss3214 {
-  color: #0288d1;
-  opacity: 0.6;
+  color: #202e3a;
+  opacity: 0.7;
 }
 .ml-3 {
   margin-left: 0.75rem !important;
@@ -150,7 +150,7 @@ p {
   /*font-weight: 500 !important;*/
 }
 .text-primary {
-  color: #0288d1 !important;
+  color: #202e3a !important;
 }
 .h6,
 h6 {

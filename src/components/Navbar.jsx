@@ -1,7 +1,9 @@
 import React , { useContext} from 'react'
-import Logo from '../assets/statics/twitter-icon.png'
+import {Link} from 'react-router-dom'
+import Menu from '../assets/statics/menu_white.svg'
 import UserIcon from '../assets/statics/user-icon.png'
-import { MdDashboard,MdAssessment,MdGroupWork,MdRoom,
+
+import { MdDashboard,MdShowChart,MdMenu,MdAssessment,MdGroupWork,MdRoom,
     MdSettingsInputAntenna,MdSupervisorAccount,MdLocationOn,
     MdGesture,MdGpsFixed,MdMemory,MdFilterCenterFocus,
     MdTexture,MdPinDrop, MdNearMe, MdMap,MdMyLocation,
@@ -16,55 +18,24 @@ const Navbar =() =>{
 
     const{side_state} = state
     console.log("navbar",side_state[1]);
-   // const [state, setState] = useState({drawerPos: 1})
 
-    /*const state = {
-        drawerPos: 1
-      };*/
-   /*const handleDrawer = () => {
-
-        if (state.drawerPos < 2) {
-          setState((state) => ({
-            drawerPos: state.drawerPos + 1
-            
-          }));
-          console.log("navbar",state);
-          changeSideState(state)
-        } else {
-          setState({
-            drawerPos: 0
-          });
-          console.log("navbar",state);
-          changeSideState(state)
-        }
-      };*/
 
       let drawerClass = [];
-      //let mainClass = [];
+     
 
       if (side_state[1]) {
         drawerClass.push("drawerOpen");
       }else{
         drawerClass.push("drawerMin");
       }
-      /*
-      if (state.drawerPos === 1) {
-        drawerClass.push("drawerMin");
-        //mainClass.push("mainMin");
-      } else if (state.drawerPos === 2) {
-        drawerClass.push("drawerOpen");
-        //mainClass.push("mainOpen");
-      } else {
-        drawerClass = [];
-        //mainClass = [];
-      }*/
 
 
     return (
         <div>
             <header className="navbar"> 
                 {" "}
-                <img className="navbar_img" src={Logo} alt="gubox logo" onClick={handleDrawer}/>
+                
+                <img className="navbar_img" src={Menu} alt="gubox logo" onClick={handleDrawer}/>
                 {" "}
                 <h3> Guboxlive</h3>{" "}
                     <div className="header__menu">
@@ -75,22 +46,36 @@ const Navbar =() =>{
             </header>
             <aside className={drawerClass.join(" ")}>
                 <ul>
-                    <li>
-                        <MdDashboard className="aside_img" size={SIZE}/>
-                        <span>Dashboard</span>
-                    </li>
-                    <li>
-                        <MdGroup className="aside_img" size={SIZE} />
-                        <span>Users</span>
-                    </li>
-                    <li>
-                        <MdMemory className="aside_img" size={SIZE}/>
-                        <span>Devices</span>
-                    </li>
-                    <li>
-                        <MdGesture className="aside_img" size={SIZE}>rutas</MdGesture>
-                        <span>Rutas</span>
-                    </li>
+                    <Link to="/" >
+                      <li>
+                          <MdDashboard className="aside_img" size={SIZE}/>
+                          <span>Dashboard</span>                       
+                      </li>
+                    </Link>
+                    <Link to="/Users">
+                      <li>                    
+                          <MdGroup className="aside_img" size={SIZE} />
+                          <span>Users</span>                    
+                      </li>
+                    </Link>
+                    <Link to="/Devices">
+                      <li>
+                          <MdMemory className="aside_img" size={SIZE}/>
+                          <span>Devices</span>
+                      </li>
+                    </Link>
+                    <Link to="/charts">
+                        <li>
+                            <MdShowChart className="aside_img" size={SIZE}>rutas</MdShowChart>
+                            <span>Charts</span>
+                        </li>
+                    </Link>
+                    <Link to="/routes">
+                        <li>
+                            <MdGesture className="aside_img" size={SIZE}>rutas</MdGesture>
+                            <span>Rutas</span>
+                        </li>
+                    </Link>
                 </ul>
             </aside>
             

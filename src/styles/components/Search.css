@@ -157,21 +157,22 @@ input:checked + .slider:before {
   .svg {
     width: 40%;
     height: 50%;
-    margin: 1rem;
+    margin: 0.7rem;
   }
   .switch {
-    width: 50px;
-    height: 28px;
+    width: 40px;
+    height: 23px;
     margin-left: 5px;
   }
+
   .connect {
     margin: 2px;
   }
 
   .slider:before {
-    height: 26px;
-    width: 26px;
-    left: 0px;
+    height: 22px;
+    width: 22px;
+    left: -7px;
     bottom: 1px;
 
     border-width: 20px;

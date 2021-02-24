@@ -5,6 +5,12 @@ import Home from '../containers/Home'
 import Login from '../containers/Login'
 import Register from '../containers/Register'
 import NotFound from '../containers/NotFound'
+import Charts from '../containers/Charts'
+import Users from '../containers/Users'
+import UsersNew from '../containers/UsersNew'
+import Devices from '../containers/Devices'
+import DevicesNew from '../containers/DevicesNew'
+import Rutes from '../containers/Rutes'
 
 import Layout from '../components/Layout'
 import '../styles/global.css'
@@ -25,6 +31,10 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/register" component={Register}/>
+                    <Route exact path="/charts" component={Charts}/>
+                    <Route exact path="/users" component={Users}/>
+                    <Route exact path="/devices" component={Devices}/>
+                    <Route exact path="/routes" component={Rutes}/>
                     <Route component={NotFound} />
                 </Switch>
             </Layout>

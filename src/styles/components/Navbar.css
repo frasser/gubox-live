@@ -27,10 +27,14 @@ h3 {
   padding: 2px;
   transition: transform 1s;
 }
+.navbar_img {
+  width: 60px;
+  height: 20px;
+}
 .navbar_img:hover {
   background-color: #15202b;
   /*background-color: rgb(33, 49, 58);*/
-  border-radius: 26px;
+  /*border-radius: 26px;*/
   transform: rotate(360deg);
 }
 
@@ -58,7 +62,7 @@ aside {
   overflow-x: hidden;
   width: 0;
   position: fixed;
-  top: 10vh;
+  top: 4rem;
   left: 0;
   bottom: 0;
   /*background-color: #2d2d2d;*/
@@ -66,9 +70,11 @@ aside {
   background-color: #202e3a;
   transition: width 0.5s ease-in-out;
 }
+
 aside ul {
   list-style: none;
   padding: 0;
+  text-decoration: none;
 }
 
 aside li {
@@ -86,6 +92,9 @@ aside li:hover {
   /*color: #1e233a !important;*/
   border-left: 5px solid #794bc4;
   /*#0288d1*/
+}
+aside :link {
+  text-decoration: none;
 }
 
 .aside_img {
