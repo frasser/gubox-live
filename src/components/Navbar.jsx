@@ -3,11 +3,9 @@ import {Link} from 'react-router-dom'
 import Menu from '../assets/statics/menu_white.svg'
 import UserIcon from '../assets/statics/user-icon.png'
 
-import { MdDashboard,MdShowChart,MdMenu,MdAssessment,MdGroupWork,MdRoom,
-    MdSettingsInputAntenna,MdSupervisorAccount,MdLocationOn,
-    MdGesture,MdGpsFixed,MdMemory,MdFilterCenterFocus,
-    MdTexture,MdPinDrop, MdNearMe, MdMap,MdMyLocation,
-    MdGroup,MdPeopleOutline,MdLineWeight} from "react-icons/md";
+import { MdDashboard,MdShowChart,
+    MdGesture,MdMemory,
+    MdGroup} from "react-icons/md";
 import '../styles/components/Navbar.css'
 import AppContext from '../context/AppContext'
 //import {Nav} from "../styles/components/navbar"
@@ -17,7 +15,7 @@ const Navbar =() =>{
     const {state, handleDrawer } = useContext(AppContext)
 
     const{side_state} = state
-    console.log("navbar",side_state[1]);
+    /*console.log("navbar",side_state[1]);*/
 
 
       let drawerClass = [];

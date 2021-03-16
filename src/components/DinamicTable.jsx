@@ -1,29 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {HiOutlinePencilAlt} from 'react-icons/hi'
 import {IoMdTrash} from 'react-icons/io'
 import{IoChevronBackOutline,IoChevronForwardOutline} from 'react-icons/io5'
 import '../styles/components/TableDevices.css'
-
-
-
+import TableHeaders  from '../components/TableHeaders'
 
 const SIZE = "24px";
-
-const TableDevices =() => {
+function DinamicTable(props) {
+    const [headerMeta, setHeaderMeta] = useState(props);
     
     return (
         <>
-            <div className="MuiPaper-root  MuiCard-root w-full overflow-auto MuiPaper-elevation6  MuiPaper-rounded">
+        
+                      <div className="MuiPaper-root  MuiCard-root w-full overflow-auto MuiPaper-elevation6  MuiPaper-rounded">
                 <table className="MuiTable-root whitespace-pre min-w-750 jss12">
                     <thead className="MuiTableHead-root">
                         <tr className="MuiTableRow-root MuiTableRow-head">
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Name</th>
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Serial</th>
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Icon</th>
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Last See</th>
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Status</th>
-                            <th className="MuiTaleCell-root MuiTableCell-head" scope="col">Action</th>
-                            
+                        
+                            <TableHeaders meta={headerMeta}/>
                         </tr>
                     </thead>
                     <tbody className="MuiTableBody-root">
@@ -314,10 +308,9 @@ const TableDevices =() => {
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>  
         </>
     )
 }
 
-export default TableDevices
+export default DinamicTable

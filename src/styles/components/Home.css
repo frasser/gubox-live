@@ -42,6 +42,9 @@
   color: white;
   transition: margin-left 0.5s ease-in-out;
 }
+.m-sm-30 {
+  margin: 30px;
+}
 
 /**************************************************************************************/
 .main-container {
@@ -73,6 +76,9 @@
 @media (min-width: 320px) {
   .mainMin {
     margin-left: 0px !important;
+  }
+  .m-sm-30 {
+    margin: 16px;
   }
 }
 @media (min-width: 768px) {

@@ -33,7 +33,9 @@ function App() {
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/charts" component={Charts}/>
                     <Route exact path="/users" component={Users}/>
+                    <Route exact path="/newUsers" component={UsersNew}/>
                     <Route exact path="/devices" component={Devices}/>
+                    <Route exact path="/newDevices" component={DevicesNew}/>
                     <Route exact path="/routes" component={Rutes}/>
                     <Route component={NotFound} />
                 </Switch>

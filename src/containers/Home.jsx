@@ -2,12 +2,10 @@ import React,{useContext, useState} from 'react'
 
 
 
-import trackImg from '../assets/statics/NB-IoT-GIF.gif'
-import GeofencingImg from '../assets/statics/geofencing.png'
-import RouteImg from '../assets/statics/route_map.jpg'
+
 
 import Card from '../components/Card'
-import CardItem from'../components/CardItem'
+
 import Timeline from '../components/Timeline'
 import Map from '../components/Map'
 import Search from '../components/Search'

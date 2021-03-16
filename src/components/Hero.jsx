@@ -15,7 +15,7 @@ const Hero =() => {
     const {state} = useContext(AppContext)
     const {side_state} = state
 
-    console.log("heroooo",side_state[1]);
+   
 
     
      let mainClass = [];
@@ -25,7 +25,7 @@ const Hero =() => {
     }else{
         mainClass.push("mainMin");
     }
-    console.log('Herooo',mainClass);
+    
     return (
         <div className={mainClass.join(" ")}>
             

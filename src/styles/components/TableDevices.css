@@ -98,7 +98,7 @@ tr {
   display: table-cell;
   padding: 12px 8px 12px 0px;
   font-size: 14px;
-  text-align: left;
+  text-align: center;
   word-break: break-all;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
@@ -115,8 +115,8 @@ tr {
   /*padding-left: 0rem !important;*/
   padding-right: 0rem !important;
 }
-.MuiTableCell-alignLeft {
-  text-align: left;
+.MuiTableCell-alignCenter {
+  text-align: center;
 }
 
 /******* State ****/
@@ -202,4 +202,126 @@ tr {
 
 .bg-primary {
   background: #3ebc4e !important;
+}
+
+/*****************footer table *******************/
+.MuiTablePagination-root:last-child {
+  padding: 0;
+}
+.MuiTablePagination-root {
+  color: rgba(52, 49, 76, 1);
+  overflow: auto;
+  font-size: 0.875rem;
+}
+.px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.MuiToolbar-root {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-regular {
+  min-height: 56px;
+}
+.MuiTablePagination-toolbar {
+  min-height: 52px;
+  padding-right: 2px;
+}
+.MuiToolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.MuiTablePagination-spacer {
+  flex: 1 1 100%;
+}
+
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTablePagination-caption {
+  flex-shrink: 0;
+}
+.MuiTypography-body {
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+
+.MuiInputBase-root {
+  color: rgba(52, 49, 76, 1);
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  font-size: 14px;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0.00938em;
+}
+.MuiTablePagination-input {
+  color: inherit;
+  font-size: inherit;
+  flex-shrink: 0;
+}
+.MuiTablePagination-selectRoot {
+  margin-left: 8px;
+  margin-right: 32px;
+}
+
+.MuiSelect-nativeInput {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+.MuiTablePagination-actions {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.MuiIconButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiIconButton-colorInherit {
+  color: inherit;
 }
