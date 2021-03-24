@@ -1,0 +1,18 @@
+.list-devices {
+  list-style-type: none;
+  align-items: center;
+  align-content: center;
+  margin: 0 20px 0 20px;
+  border-top: 0.0625rem solid #ebebeb;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.list-devices:hover {
+  background-color: #444054;
+  color: white;
+}
+h1,
+h1 {
+  color: #444054;
+}

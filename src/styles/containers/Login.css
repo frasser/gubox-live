@@ -1,0 +1,122 @@
+.login-container {
+  position: relative;
+  top: 10vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    'social-login banner-login'
+    'LoginDivider banner-login'
+    'email-login  banner-login'
+    'footer-login banner-login';
+}
+/***************************************************/
+
+.social-login {
+  grid-area: social-login;
+  padding: 16px 10px 0 10px;
+  margin: 0;
+  background-color: white;
+}
+.LoginDivider {
+  grid-area: LoginDivider;
+}
+.email-login {
+  grid-area: email-login;
+  background-color: white;
+}
+.footer-login {
+  grid-area: footer-login;
+  background-color: white;
+}
+.banner-login {
+  grid-area: banner-login;
+  background-color: red;
+}
+
+/***************************************************/
+
+.social-facebook {
+  margin-bottom: 12px;
+}
+.social-login a {
+  display: block;
+  margin-bottom: 10px;
+}
+.btn--big.btn--responsive,
+.btn--medium.btn--responsive {
+  font-size: 0.85em;
+}
+.btn--big {
+  font-size: 18px;
+  padding: 11px 0.8em 12px 0.8em;
+}
+.btn-fcbk {
+  background: -webkit-linear-gradient(
+    right,
+    #3b5999 0%,
+    #3b5999 50%,
+    #4e69a3 100%
+  );
+  background: -moz-linear-gradient(
+    right,
+    #3b5999 0%,
+    #3b5999 50%,
+    #4e69a3 100%
+  );
+  background: -o-linear-gradient(right, #3b5999 0%, #3b5999 50%, #4e69a3 100%);
+  background: -ms-linear-gradient(right, #3b5999 0%, #3b5999 50%, #4e69a3 100%);
+  background: linear-gradient(to left, #3b5999 0%, #3b5999 50%, #4e69a3 100%);
+  -webkit-box-shadow: 0 1px 1px 0 #355089;
+  box-shadow: 0 1px 1px 0 #355089;
+}
+.btn-twt {
+  background: -webkit-linear-gradient(
+    right,
+    #60a9de 0%,
+    #60a9de 50%,
+    #6fb1e1 100%
+  );
+  background: -moz-linear-gradient(
+    right,
+    #60a9de 0%,
+    #60a9de 50%,
+    #6fb1e1 100%
+  );
+  background: -o-linear-gradient(right, #60a9de 0%, #60a9de 50%, #6fb1e1 100%);
+  background: -ms-linear-gradient(right, #60a9de 0%, #60a9de 50%, #6fb1e1 100%);
+  background: linear-gradient(to left, #60a9de 0%, #60a9de 50%, #6fb1e1 100%);
+  -webkit-box-shadow: 0 1px 1px 0 #5698c7;
+  box-shadow: 0 1px 1px 0 #5698c7;
+}
+.icon--line,
+.icon--left {
+  margin-right: 0.5em;
+}
+
+.LoginDivider {
+  text-align: center;
+  overflow: hidden;
+  margin: 1rem auto;
+  width: 94%;
+}
+.LoginDivider-text {
+  position: relative;
+  font-family: 'cooper_hewittmedium';
+  padding: 12px;
+  font-weight: 600;
+  color: #273b47;
+  font-size: 20px;
+}
+
+.email-login {
+  padding: 0px 10px 24px;
+}
+
+@media (min-width: 320px) {
+}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}

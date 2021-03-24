@@ -1,14 +1,18 @@
 import React,{useState} from 'react'
+import {Link} from 'react-router-dom'
 import {HiOutlinePencilAlt} from 'react-icons/hi'
 import {IoMdTrash} from 'react-icons/io'
 import{IoChevronBackOutline,IoChevronForwardOutline} from 'react-icons/io5'
 import '../styles/components/TableDevices.css'
 import TableHeaders  from '../components/TableHeaders'
+import DeleteModal from '../components/DeleteModal'
 
 const SIZE = "24px";
 function DinamicTable(props) {
+    /*console.log(props);*/
     const [headerMeta, setHeaderMeta] = useState(props);
-    
+    const belong = props.belongsTo;
+
     return (
         <>
         
@@ -30,20 +34,26 @@ function DinamicTable(props) {
                                 <small className="rounded g-light-gray elevation-z3 px-2 py-2px">inactive</small>
                             </td>
                             <td className="MuiTableCell-root MuiTableCell-body px-0 ">
-                                <button className="MuiButtonBase-root MuiIconButton-root" tabIndex="0" type="button">
-                                    <span className="MuiIconButton-label">
-                                        <HiOutlinePencilAlt size={SIZE}/>     
-                                    </span>
-                                    <span className="MuiTouchRipple-root"></span>
-                                </button>
-                                <button className="MuiButtonBase-root MuiIconButton-root" tabIndex="0" type="button">
+                                <Link to={`/${belong}/edit`}>
+                                    <button  className="MuiButtonBase-root MuiIconButton-root" tabIndex="0" type="button">
+                                        <span className="MuiIconButton-label">
+                                            <HiOutlinePencilAlt size={SIZE}/>     
+                                        </span>
+                                        <span className="MuiTouchRipple-root"></span>
+                                    </button>
+                                </Link>
+                                
+                                <button onClick={props.onOpenModal} className="MuiButtonBase-root MuiIconButton-root" tabIndex="0" type="button">
                                     <span className="MuiIconButton-label">
                                         <IoMdTrash size={SIZE}/>     
                                     </span>
                                     <span className="MuiTouchRipple-root"></span>    
                                 </button>
+
+
                             </td>
                         </tr>
+                        
                         <tr className="MuiTableRow-root MuiTableRow-hover">
                             <td className="MuiTableCell-root MuiTableCell-body px-0 MuiTableCell-alignCenter">VCY799</td>
                             <td className="MuiTableCell-root MuiTableCell-body px-0 MuiTableCell-alignCenter">QOP08877</td>
@@ -309,6 +319,12 @@ function DinamicTable(props) {
                     </div>
                 </div>
             </div>  
+            <DeleteModal
+                                    isOpen={props.modalIsOpen}
+                                    onClose={props.onClose}
+                                    onDelete={props.onDelete}
+                                    belongsTo={belong}
+                                />
         </>
     )
 }

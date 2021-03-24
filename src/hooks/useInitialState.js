@@ -5,7 +5,7 @@ const useInitialState = () =>{
     const [state, setState] = useState(initialState)
     const [toggle, setToggle] = useState(true)
 
-    console.log("initial state",toggle);
+    /*console.log("initial state",toggle);*/
     /*const changeSideState = payload =>{
         setState({
             ...state,

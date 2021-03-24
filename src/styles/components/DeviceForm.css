@@ -21,9 +21,9 @@
   padding: 1rem 0;
   color: black;
   box-sizing: border-box;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  height: 230px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  height: 260px;
 }
 .Information-header-section {
   display: flex;
@@ -125,3 +125,21 @@ input[type='text']:focus {
 .Information-next {
   margin: 0 10px;
 }
+
+@media (min-width: 321px) {
+  .Information-form {
+
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+}
+@media (min-width: 768px) {
+  .Information-content {
+    
+
+    margin: 1rem 2rem 5rem 2rem;
+  }
+}
+
+@media (min-width: 992px) {}

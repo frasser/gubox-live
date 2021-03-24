@@ -27,7 +27,7 @@ function CardDevice(props) {
 
             <div className="Badge__section-info">
                 {/*<h3 className="cb">{props.jobTitle}</h3>*/}
-                <div>{props.twitter}</div>
+                <div>{props.serial}</div>
             </div>
             <div className="Badge__footer">
                 

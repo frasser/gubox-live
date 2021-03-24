@@ -9,6 +9,19 @@ import '../styles/components/Search.css'
 const Search = () => {
     const [checked, setChecked] = useState(true)
 
+    const [containerState, setContainerState] = useState({    loading:true,
+        error:null,
+        data: undefined,
+        modalIsOpen:false})
+    
+        const handleOpenModal = e =>{
+            setContainerState({modalIsOpen: true});
+          };
+          
+          const handleCloseModal = e =>{
+            setContainerState({modalIsOpen: false});
+          };
+
     const handleStateCheck = () =>{
         setChecked(!checked)
     }
@@ -20,7 +33,11 @@ const Search = () => {
             <section className="search-container">
 
                         <div className="search isHome">
-                            <SearchBar/>
+                            <SearchBar
+                                                          onOpenModal={handleOpenModal} 
+                                                          onClose={handleCloseModal}
+                                                          modalIsOpen={containerState.modalIsOpen}
+                            />
                         </div>
                         <div className="icon-device">
                             <img src={DeviceIco} alt="DeviceIco" className="svg"/>

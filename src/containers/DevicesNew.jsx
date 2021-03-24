@@ -1,11 +1,24 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import AppContext from '../context/AppContext'
 import CardDevice from '../components/CardDevice'
 import DeviceForm from '../components/DeviceForm'
+import PageLoading from '../components/PageLoading'
 
 const DevicesNew = () => {
     const {state} = useContext(AppContext)
     const {side_state} = state
+
+
+    const [stateCard, setStateCard] = useState({
+        loading: false,
+        error:null,
+        form: {
+        firstName: '',       
+        serial: '',
+        iconUrl: '',
+        }
+    })
+    
   
     let mainClass = [];
   
@@ -15,42 +28,56 @@ const DevicesNew = () => {
         mainClass.push("mainMin");
     }
 
-    const stateCard = { 
-        loading: false,
-        error:null,
-        form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        jobTitle: '',
-        twitter: '',
-       },
-    };
+/*
+  const  handleChange = e =>{
+        setStateCard({
+            ...stateCard.form,
+            [e.target.name]: e.target.value
+        })
+    }
+
+
+   const  handleSubmit = async e =>{
+        e.preventDefault();
+        setStateCard({
+            loading:true,
+            error: null
+        })
+        console.log(stateCard);
+    }*/
     return (
+   
         <div className={mainClass.join(" ")}>
-                           <div className="container">
-                    <div className="row">
-                        <div className="col-6">
-                            <CardDevice 
-                            firstName={stateCard.form.firstName || 'DEVICE NAME '}
-                            lastName={stateCard.form.lastName || 'LAST NAME'}
-                            twitter={stateCard.form.twitter || 'SERIAL'}
-                            jobTitle={stateCard.form.jobTitle || 'JOB TITLE'}
-                            email={stateCard.form.email}
-                            avatarUrl=""
-                            />
+            
+                    {stateCard.loading?
+                    <PageLoading/>
+                    :   
+                    <div className="container">
+                        <div className="row">
+                            {/*<div className="col-6">
+                                <CardDevice 
+                                firstName={stateCard.form.firstName || 'DEVICE NAME '}
+                                
+                                serial={stateCard.form.serial || 'SERIAL'}
+                                                    
+                                iconUrl=""
+                                />
+                    </div>*/}
+                            <div className="col-6">
+                                <DeviceForm
+                                
+                                /*onChange={handleChange}
+                                onSubmit={handleSubmit} 
+                                formValues={stateCard.form}
+                                error={stateCard.error}*/
+                                />
+                            </div>
                         </div>
-                        <div className="col-6">
-                            {<DeviceForm/>
-                            /*<BadgeForm 
-                            onChange={this.handleChange}
-                            onSubmit={this.handleSubmit} 
-                            formValues={this.state.form}
-                            error={this.state.error}
-                            />*/}
-                        </div>
-                    </div>
-                </div>
+                    </div> 
+                }
+                
+                
+
         </div>
     )
 }

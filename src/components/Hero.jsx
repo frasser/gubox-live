@@ -27,7 +27,7 @@ const Hero =() => {
     }
     
     return (
-        <div className={mainClass.join(" ")}>
+        <>
             
                 <div className="hero-container">
                     <div className="item">
@@ -132,7 +132,7 @@ const Hero =() => {
 
             </div>
             
-            </div>
+            </>
     )
 }
 

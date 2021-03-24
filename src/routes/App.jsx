@@ -26,8 +26,9 @@ function App() {
         <>
         <AppContext.Provider value={initialState}>
            <BrowserRouter>
-            <Layout>
-                <Switch>
+           
+           <Layout>
+                <Switch>            
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/register" component={Register}/>
@@ -38,8 +39,10 @@ function App() {
                     <Route exact path="/newDevices" component={DevicesNew}/>
                     <Route exact path="/routes" component={Rutes}/>
                     <Route component={NotFound} />
+                    
                 </Switch>
             </Layout>
+           
            </BrowserRouter> 
            </AppContext.Provider>
         </>

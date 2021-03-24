@@ -41,6 +41,20 @@ const Users = () => {
   
   const {state} = useContext(AppContext)
   const {side_state} = state
+  const [containerState, setContainerState] = useState({    loading:true,
+    error:null,
+    data: undefined,
+    modalIsOpen:false})
+
+
+
+const handleOpenModal = e =>{
+  setContainerState({modalIsOpen: true});
+};
+
+const handleCloseModal = e =>{
+  setContainerState({modalIsOpen: false});
+};
 
   let mainClass = [];
 
@@ -62,7 +76,14 @@ const Users = () => {
                   </Link>
           </div> 
         
-          <DinamicTable HeadNames={metaH} />
+          <DinamicTable 
+          HeadNames={metaH}
+          onOpenModal={handleOpenModal} 
+          onClose={handleCloseModal}
+
+          modalIsOpen={containerState.modalIsOpen}
+          belongsTo='user'
+           />
           </div>
 
       </div>

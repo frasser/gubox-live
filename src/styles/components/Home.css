@@ -43,7 +43,7 @@
   transition: margin-left 0.5s ease-in-out;
 }
 .m-sm-30 {
-  margin: 30px;
+  margin: 0px 20px;
 }
 
 /**************************************************************************************/
@@ -78,7 +78,7 @@
     margin-left: 0px !important;
   }
   .m-sm-30 {
-    margin: 16px;
+    margin: 0 10px;
   }
 }
 @media (min-width: 768px) {

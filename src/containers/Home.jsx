@@ -13,13 +13,14 @@ import Search from '../components/Search'
 import '../styles/components/Home.css'
 import AppContext from '../context/AppContext'
 
-
+import Hero from '../components/Hero'
 
 const Home = () => {
 
     const {state} = useContext(AppContext)
     const {side_state} = state
-  
+
+ 
     
     //const i =  Object.keys(side_state)[0]
 
@@ -61,9 +62,12 @@ const Home = () => {
         <div className={mainClass.join(" ")}>
 
 
+<Hero></Hero>
             <div className="main-container">
                 <div className="main-items">
-                    <Search/>
+                    <Search
+
+                    />
                 </div>
                 <div className="main-items">
                    <Map/>
@@ -77,7 +81,10 @@ const Home = () => {
 
 
             </div>
+
         </div>
+        
+
     )
 }
 
