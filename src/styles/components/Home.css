@@ -9,7 +9,7 @@
 .main {
   /* position asolute lo restringe a la mitad de la pantalla*/
   position: relative;
-  top: 10vh;
+  /*top: 10vh;*/
   padding: 0em;
   margin-left: 0;
   bottom: 0;
@@ -23,7 +23,7 @@
 .mainMin {
   /* position asolute lo restringe a la mitad de la pantalla*/
   position: relative;
-  top: 4rem;
+  /*top: 4rem;*/
   padding: 0em;
   margin-left: 70px;
   bottom: 0;
@@ -34,7 +34,7 @@
 .mainOpen {
   /* position asolute lo restringe a la mitad de la pantalla*/
   position: relative;
-  top: 4rem;
+ /* top: 4rem;*/
   padding: 0em;
   margin-left: 240px;
   bottom: 0;
