@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import LiveLogo from '../assets/statics/gubox-live.svg'
 import BigLiveLogo from '../assets/statics/big-gubox-live.svg'
@@ -50,7 +51,8 @@ const Login =() =>{
                     </div>
                     <div className="footer-login">
                         <div className="AccountFooter-create"><span>¿Aún no tienes cuenta en Gubox Live?</span></div>
-                        <div className="AccountFooter-link"><a href="/onboarding" className="AccountFooter-btn"><span>Regístrate</span></a></div>
+                        <div className="AccountFooter-link"><a className="AccountFooter-btn">
+                            <Link to="/register"><span>Regístrate</span></Link></a></div>
                     </div>
                 </div>
                 <div className="banner-login">
@@ -60,8 +62,8 @@ const Login =() =>{
                             alt="Gubox live Logo"                   
                         />
                     </div>
-                    <div className="banner-Info">
-                        <p>Gubox live is the platform built for enchance user experiences using the devices offering by gubox. </p>
+                    <div className="banner-Info ">
+                        <p className=" ">Gubox live is the platform built for enchance user experiences using the devices offering by gubox. </p>
                         <br></br>
                         <p>This app offers deep immersion in the management and visualization of the data, events, and explorations of your tracking devices.</p>
                     </div>

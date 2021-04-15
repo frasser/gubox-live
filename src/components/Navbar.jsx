@@ -2,6 +2,7 @@ import React , { useContext,useState, useEffect} from 'react'
 import {Link,useLocation} from 'react-router-dom'
 import Menu from '../assets/statics/menu_white.svg'
 import UserIcon from '../assets/statics/user-icon.png'
+import LiveLogo from '../assets/statics/gubox-live.svg'
 
 import { MdDashboard,MdShowChart,
     MdGesture,MdMemory,
@@ -135,7 +136,9 @@ const Navbar =() =>{
                         
                         <img className="navbar_img" src={Menu} alt="gubox logo" onClick={handleDrawer}/>
                         {" "}
-                        <h3> Guboxlive</h3>{" "}
+                        <div className="navbar_logo">
+                        <img className="logo_img" src={LiveLogo} alt="live logo"/>{" "}
+                        </div>
                             <div className="header__menu">
                                 <div className="header__menu--profile">
                                     <img src={UserIcon} alt="user icon"/>
@@ -187,9 +190,10 @@ const Navbar =() =>{
               (
                 <>
                   <header className="navbar"> 
-   
+                    
                    <h3> Guboxlive</h3>{" "}
- 
+                    
+                   
                     </header>   
                 </>
             )

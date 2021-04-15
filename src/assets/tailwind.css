@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply py-2 px-4 rounded;
+}
+
+.btn-next {
+  @apply bg-successgreen text-white text-base rounded my-1.5 mx-0 border-none px-3.5 py-2.5;
+}
+.btn-faceboock {
+  @apply bg-fbcolor text-white text-base  rounded-md my-1.5 mx-0 border-none px-3.5 py-2.5;
+}
+.btn-twitter {
+  @apply bg-twcolor text-white text-base rounded-md my-1.5 mx-0 border-none px-3.5 py-2.5;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.card {
+  @apply rounded overflow-hidden shadow-lg;
+}
+/*
+@responsive {
+    .rotate-45 {
+      transform: rotate(45deg);
+    }
+  }
+  
+  @variants hover {
+    .zoom {
+      transform: scale(2);
+    }
+  }*/
