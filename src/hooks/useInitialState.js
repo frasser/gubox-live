@@ -19,7 +19,9 @@ const useInitialState = () =>{
         state,
         side_state:[state.side_state, toggle]
     });
-      
+
+
+
 /*
         if (state.drawerPos < 2 ) {
           setState((state) => ({
@@ -36,8 +38,19 @@ const useInitialState = () =>{
           //changeSideState(state)
         }*/
       }
+      
+      const submitRegister = ()=>{
+        setState({...state, isSubmitLoading: true})
+      }
+      const submitRegisterReceived =()=>{
+        setState({
+          ...state, isSubmitLoading: false, isSubmissionReceived: true 
+        })
+      }
 
     return{
+        submitRegister,
+        submitRegisterReceived,
         handleDrawer,
         state,
     }

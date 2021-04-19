@@ -27,27 +27,41 @@ function App() {
         <AppContext.Provider value={initialState}>
            <BrowserRouter>
            
-           <Layout>
+           
                 <Switch>            
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/login" component={Login}/>
-                    <Route exact path="/register" component={Register}/>
+                    <RouteWrapper exact path="/" component={Home} layout={Layout}/>
+                    <Route exact path="/login" component={Login} />
+                    <RouteWrapper exact path="/register" component={Register}/>
                     
-                    <Route exact path="/charts" component={Charts}/>
-                    <Route exact path="/users" component={Users}/>
-                    <Route exact path="/newUsers" component={UsersNew}/>
-                    <Route exact path="/devices" component={Devices}/>
-                    <Route exact path="/newDevices" component={DevicesNew}/>
-                    <Route exact path="/routes" component={Rutes}/>
+                    <RouteWrapper exact path="/charts" component={Charts} layout={Layout}/>
+                    <RouteWrapper exact path="/users" component={Users} layout={Layout}/>
+                    <RouteWrapper exact path="/newUsers" component={UsersNew} layout={Layout}/>
+                    <RouteWrapper exact path="/devices" component={Devices} layout={Layout}/>
+                    <RouteWrapper exact path="/newDevices" component={DevicesNew} layout={Layout}/>
+                    <RouteWrapper exact path="/routes" component={Rutes} layout={Layout}/>
                     <Route component={NotFound} />
                     
                 </Switch>
-            </Layout>
+            
            
            </BrowserRouter> 
            </AppContext.Provider>
         </>
     )
 }
+
+function RouteWrapper({
+    component: Component, 
+    layout: Layout, 
+    ...rest
+  }) {
+    return (
+      <Route {...rest} render={(props) =>
+        <Layout {...props}>
+          <Component {...props} />
+        </Layout>
+      } />
+    );
+  }
 
 export default App
