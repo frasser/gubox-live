@@ -51,8 +51,8 @@ const Login =() =>{
                     </div>
                     <div className="footer-login">
                         <div className="AccountFooter-create"><span>¿Aún no tienes cuenta en Gubox Live?</span></div>
-                        <div className="AccountFooter-link"><a className="AccountFooter-btn">
-                            <Link to="/register"><span>Regístrate</span></Link></a></div>
+                        <Link to="/register"><div className="AccountFooter-link"><a className="AccountFooter-btn">
+                            <span>Regístrate</span></a></div></Link>
                     </div>
                 </div>
                 <div className="banner-login">

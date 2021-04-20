@@ -59,31 +59,35 @@ function Register() {
       }
 
     return (
-        <div>
+        <>
             
-            <div className="min-w-screen min-h-full bg-transparent bg-gray-50 flex items-center justify-center px-0 py-0">
+            <div className="min-w-screen h-full bg-transparent bg-gray-50 flex items-center justify-center px-0 py-0">
                 <div className="bg-white text-gray-500  shadow-xl w-full   overflow-hidden">
                     <div className="md:flex w-full h-full  ">
-                      
-                        <MultiSteps 
-                        step={isFirst}
-                        />
+                      <div className="md:block md:w-5/12 md:pt-12 ">
+                        <div className=' md:w-full '>
                         
-
-                        <div className="sm:w-full h-full  md:w-5/12 py-10 px-5 md:px-10 ">
-
-                            {steps[currentStep]}
-                            <div className="flex items-center  justify-end ">
-                            {!isFirst 
-                            ?
-                            <button className="btn-next w-20 font-semibold " onClick={()=>goBack()}>Back</button> 
-                            :
-                            <button className="btn-next w-20 font-semibold " onClick={()=>goForward()}>Next</button>
-                            }
-                                
-                            </div>
+                          <MultiSteps 
+                          step={isFirst}
+                          />
                         </div>
-                        <div className="hidden md:block w-full py-10 px-10 bg-bannerscolor  bg-opacity-90" /*style={{ backgroundImage: `url('${GridImg}')` }}*/ >
+
+                          <div className="sm:w-full h-full  md:w-full   py-5 px-5 ">
+                              {steps[currentStep]}
+                              <div className="flex items-center  justify-end ">
+                              
+                              {!isFirst 
+                              ?
+                              <button className="btn-next w-20 font-semibold  " onClick={()=>goBack()}>Back</button> 
+                              :
+                              <button className="btn-next w-20 font-semibold " onClick={()=>goForward()}>Next</button>
+                              }
+                                  
+                              </div>
+                              
+                          </div>
+                        </div>
+                        <div className="hidden md:block w-full py-16 px-10 bg-bannerscolor  bg-opacity-90" /*style={{ backgroundImage: `url('${GridImg}')` }}*/ >
                             <div className="flex -my-6 mx-12 z-20 ">
                                 <div className="inline-flex">
                                 <img
@@ -118,7 +122,7 @@ function Register() {
                 </div>
 
             </div>
-        </div>
+      </>
     )
 }
 

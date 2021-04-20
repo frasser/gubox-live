@@ -13,6 +13,7 @@ import DevicesNew from '../containers/DevicesNew'
 import Rutes from '../containers/Rutes'
 
 import Layout from '../components/Layout'
+import NonAuthLayout from '../components/NonAuthLayout'
 import '../styles/global.css'
 
 /** las siguientes importaciones perteneces al contexto que se va a compartir en toda la app mediante el Provider y elcustom hook */
@@ -30,8 +31,8 @@ function App() {
            
                 <Switch>            
                     <RouteWrapper exact path="/" component={Home} layout={Layout}/>
-                    <Route exact path="/login" component={Login} />
-                    <RouteWrapper exact path="/register" component={Register}/>
+                    <RouteWrapper exact path="/login" component={Login}  layout={NonAuthLayout}/>
+                    <RouteWrapper exact path="/register" component={Register} layout={NonAuthLayout}/>
                     
                     <RouteWrapper exact path="/charts" component={Charts} layout={Layout}/>
                     <RouteWrapper exact path="/users" component={Users} layout={Layout}/>
@@ -39,7 +40,7 @@ function App() {
                     <RouteWrapper exact path="/devices" component={Devices} layout={Layout}/>
                     <RouteWrapper exact path="/newDevices" component={DevicesNew} layout={Layout}/>
                     <RouteWrapper exact path="/routes" component={Rutes} layout={Layout}/>
-                    <Route component={NotFound} />
+                    <RouteWrapper component={NotFound} layout={NonAuthLayout} />
                     
                 </Switch>
             

@@ -20,6 +20,19 @@
   @apply bg-blue-700;
 }
 
+.drawerMin {
+  @apply md:w-16 sm:w-0 z-30;
+}
+.drawerOpen {
+  @apply w-44  z-30;
+}
+.mainMin {
+  @apply ml-0 !important md:relative md:p-0 md:ml-16 md:bottom-0;
+}
+.mainOpen {
+  @apply ml-0 !important  md:relative md:p-0 md:ml-44 md:bottom-0;
+}
+
 .card {
   @apply rounded overflow-hidden shadow-lg;
 }

@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -10,7 +11,9 @@ module.exports = {
         'successgreen':'#7dcd40',
         'fbcolor':'#3b5999',
         'twcolor':'#60a9de',
-        'bannerscolor':'#273742'
+        'bannerscolor':'#273742',
+        'muted': '#34314c'
+       
       },
       
     },

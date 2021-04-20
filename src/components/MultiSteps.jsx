@@ -33,7 +33,7 @@ function MultiSteps (props) {
      
      
     return (
-        <div className="max-w-xl mx-auto my-4 border-b-2 pb-4">	
+        <div className="max-w-xl mx-auto my-2 border-b-2 pb-4">	
 	        <div className="flex pb-3">
                 <div className="flex-1 ">
                 </div>

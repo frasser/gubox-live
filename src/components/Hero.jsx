@@ -1,6 +1,6 @@
 
 import React ,{useContext}from 'react'
-import { MdMemory,MdKeyboardArrowRight} from "react-icons/md";
+import { MdMemory} from "react-icons/md";
 import { RiSignalTowerFill} from "react-icons/ri";
 import { AiOutlineAlert } from "react-icons/Ai";
 import '../styles/components/Hero.css'
@@ -28,109 +28,72 @@ const Hero =() => {
     
     return (
         <>
+                                    <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
+                                <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 " >
+                                <div className="inline-block px-3">
+                                    <div className="w-20 h-16 md:w-32 md:h-20 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                        <div className="flex items-center"  aria-hidden="true">
+                                            
+                                            <MdMemory size={SIZE} className=" mt-2"/>
+                                        
+                                            <div className="">
+                                                <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Devices</small>
+                                                <h6 className="mt-1 ml-2 font-medium text-bold  text-gray-800 opacity-50 pl-7">2</h6>
+                                            </div>
+
+        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="inline-block px-3">
+                                    <div className="w-20 h-16 md:w-32  md:h-20 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                        <div className="flex items-center"  aria-hidden="true">
+                                                
+                                                <RiSignalTowerFill size={SIZE} className=" mt-2"/>
+                                            
+                                                <div className="">
+                                                    <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Coverage</small>
+                                                    <h6 className="mt-1 ml-2 font-medium text-bold  text-gray-800 opacity-50 pl-7"></h6>
+                                                </div>
+
             
-                <div className="hero-container">
-                    <div className="item">
-                        <p className="hero-welcome">
-                            
-                            Bienvenido, {"juan pablo"}
-                        </p>
-                    </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div className="inline-block px-3">
+                                    <div className="w-20 h-16 md:w-32  md:h-20 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                        <div className="flex items-center"  aria-hidden="true">
+                                                    
+                                                    <AiOutlineAlert size={SIZE} className=" mt-2"/>
+                                                
+                                                    <div className="">
+                                                        <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Alerts</small>
+                                                        <h6 className="mt-1 ml-2 font-medium text-bold  text-gray-800 opacity-50 pl-7">5</h6>
+                                                    </div>
 
                 
-                    <div className="item">
-                        <div className="targetsGrid-container mb-3 targetsGrid-spacing-xs-3">
-                            <div className="targetsGrid-item targetsGrid-xs-12">
-                                <div className="targetsPaper-root targetsGrid-card bg-paper items-center justify-between flex-wrap flex targetsGrid-elevation6">
-                                    <div className="flex items-center"  aria-hidden="true">
-                                        
-                                            <MdMemory className="jss3214" size={SIZE}/>
-                                        
-                                            <div className="ml-3">
-                                                <small className="text-muted">Devices</small>
-                                                <h6 className="m-0 mt-1 font-medium text-primary">2</h6>
-                                            </div>
-        
+                                        </div>
                                     </div>
-                                    <button className="targetsButtonBase-root targetsIconButton-root " tabIndex="0" type="button" title="view details">
-                                        <span className="targetsIconButton-label">
-                                            <MdKeyboardArrowRight  className="targetsIcon-root material-icons" aria-hidden="true"/>
-                                        </span>
-                                        <span className="tarTouchRipple-root"></span>
-                                    </button>
                                 </div>
-                            </div>
+                                <div className="inline-block px-3">
+                                    <div className="w-20 h-16 md:w-32  md:h-20 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                        <div className="flex items-center"  aria-hidden="true">
+                                                        
+                                                        <MdMemory size={SIZE} className=" mt-2"/>
+                                                    
+                                                        <div className="">
+                                                            <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Messages</small>
+                                                            <h6 className="mt-1 ml-2 font-medium text-bold  text-gray-800 opacity-50 pl-7">2</h6>
+                                                        </div>
 
-                            <div className="targetsGrid-item targetsGrid-xs-12">
-                                <div className="targetsPaper-root targetsGrid-card bg-paper items-center justify-between flex-wrap flex targetsGrid-elevation6">
-                                    <div className="flex items-center"  aria-hidden="true">
-                                        
-                                            <RiSignalTowerFill className="jss3214" size={SIZE}/>
-                                        
-                                            <div className="ml-3">
-                                                <small className="text-muted">Cobertura</small>
-                                                <h6 className="m-0 mt-1 font-medium text-primary">2</h6>
-                                            </div>
-        
+                    
+                                        </div>
                                     </div>
-                                    <button className="targetsButtonBase-root targetsIconButton-root " tabIndex="0" type="button" title="view details">
-                                        <span className="targetsIconButton-label">
-                                            <MdKeyboardArrowRight  className="targetsIcon-root material-icons" aria-hidden="true"/>
-                                        </span>
-                                        <span className="tarTouchRipple-root"></span>
-                                    </button>
                                 </div>
-                            </div>
 
-                            <div className="targetsGrid-item targetsGrid-xs-12">
-                                <div className="targetsPaper-root targetsGrid-card bg-paper items-center justify-between flex-wrap flex targetsGrid-elevation6">
-                                    <div className="flex items-center"  aria-hidden="true">
-                                        
-                                            <AiOutlineAlert className="jss3214" size={SIZE}/>
-                                        
-                                            <div className="ml-3">
-                                                <small className="text-muted">Alertas</small>
-                                                <h6 className="m-0 mt-1 font-medium text-primary">2</h6>
-                                            </div>
-        
-                                    </div>
-                                    <button className="targetsButtonBase-root targetsIconButton-root " tabIndex="0" type="button" title="view details">
-                                        <span className="targetsIconButton-label">
-                                            <MdKeyboardArrowRight  className="targetsIcon-root material-icons" aria-hidden="true"/>
-                                        </span>
-                                        <span className="tarTouchRipple-root"></span>
-                                    </button>
                                 </div>
-                            </div>
-                            <div className="targetsGrid-item targetsGrid-xs-12">
-                                <div className="targetsPaper-root targetsGrid-card bg-paper items-center justify-between flex-wrap flex targetsGrid-elevation6">
-                                    <div className="flex items-center"  aria-hidden="true">
-                                        
-                                            <MdMemory className="jss3214" size={SIZE}/>
-                                        
-                                            <div className="ml-3">
-                                                <small className="text-muted">Messages</small>
-                                                <h6 className="m-0 mt-1 font-medium text-primary">2</h6>
-                                            </div>
-        
-                                    </div>
-                                    <button className="targetsButtonBase-root targetsIconButton-root " tabIndex="0" type="button" title="view details">
-                                        <span className="targetsIconButton-label">
-                                            <MdKeyboardArrowRight  className="targetsIcon-root material-icons" aria-hidden="true"/>
-                                        </span>
-                                        <span className="tarTouchRipple-root"></span>
-                                    </button>
-                                </div>
-                            </div>
-
-
                         </div>
 
-                        
-                    </div>
-                    
-
-            </div>
             
             </>
     )

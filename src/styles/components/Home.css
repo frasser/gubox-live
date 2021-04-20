@@ -34,7 +34,7 @@
 .mainOpen {
   /* position asolute lo restringe a la mitad de la pantalla*/
   position: relative;
- /* top: 4rem;*/
+  /* top: 4rem;*/
   padding: 0em;
   margin-left: 240px;
   bottom: 0;
@@ -74,20 +74,20 @@
 }
 
 @media (min-width: 320px) {
-  .mainMin {
+  /*.mainMin {
     margin-left: 0px !important;
   }
   .m-sm-30 {
     margin: 0 10px;
-  }
+  }*/
 }
 @media (min-width: 768px) {
 }
 
 @media (min-width: 992px) {
-  .mainMin {
+  /*.mainMin {
     margin-left: 70px !important;
-  }
+  }*/
   .main-container {
     grid-template-rows: repeat(16, 5vh);
   }

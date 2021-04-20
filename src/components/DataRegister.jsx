@@ -2,8 +2,8 @@ import React from 'react'
 
 const DataRegister =() => {
     return (
-        <>
-                            <div className="text-center mb-10">
+        <div className="pb-16 md:pb-0">
+                            <div className="text-center mb-10 ">
                                 <h1 className="font-bold text-3xl text-gray-900">REGISTER</h1>
                                 <p className="text-realgrey">Enter your information to register</p>
                             </div>
@@ -38,7 +38,7 @@ const DataRegister =() => {
                             </div>
                             </form>
             
-        </>
+        </div>
     )
 }
 
