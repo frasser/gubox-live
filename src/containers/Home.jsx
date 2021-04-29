@@ -66,11 +66,11 @@ const Home = () => {
 
     return (    
     <div className={className.join(" ")}>
-    <div className="bg-blue-400 h-screen flex flex-col items-end">
-        <div className="flex-1  w-full bg-red-400 shadow-xl  relative overflow-hidden">
-                <div className=" h-36  absolute w-full z-0 bg-bannerscolor  "></div>
-                    <div className="flex flex-col overflow-y-auto h-full p-4 space-y-4">
-                        <div className="flex flex-col z-10 ml-4 text-white">
+    <div className="bg-blue-400 md:h-screen flex flex-col md:flex-row flex-auto ">
+        <div className="flex  md:flex-col relative  w-full bg-red-400 shadow-xl  overflow-hidden">
+                <div className=" flex flex-col h-36   absolute w-full  z-0 bg-bannerscolor  "></div>
+                    <div className="flex flex-col overflow-y-auto h-full px-3 pb-2  md:pb-2 space-y-4">
+                        <div className="flex flex-col z-10 pt-4 text-white bg-bannerscolor">
 
 
                             <button className="fixed p-2 text-white bg-white rounded-lg top-5 right-5 md:hidden w-11 h-8" onClick={handleDrawer}>
@@ -86,23 +86,12 @@ const Home = () => {
 
                             <Hero/>
                         </div>
-                <div className="border-0 border-t-4 border-blue-500 rounded z-10 shadow-md">
-                            <div className="bg-white border border-t-0 rounded-t-none rounded-b p-6 flex flex-col space-y-2">
-                            <div className="font-semibold text-sm">Find your answer now</div>
-                            <div className="flex flex-row">
-                                <input type="text" placeholder="Search our articles" className="border flex-1 rounded-l p-2 text-sm shadow-inner outline-none bg-gray-50 focus:bg-white" />
-                                <button type="button" className="bg-blue-700 p-2 rounded-r">
-                                {'svg'}
-                                </button>
-                            </div>
-                            </div>
-                </div>
-                        <div className="bg-white border rounded flex items-center justify-center p-8 z-10">
-                            this is a card
+
+                        <div className="border-0   h-screen w-full  md:w-full  shadow-md justify-center items-center">
+                                   <Map/>
                         </div>
-                        <div className="bg-white border rounded flex items-center justify-center p-8 z-10">
-                            this is a card
-                        </div>
+
+
                 </div>
             
         </div>
@@ -111,16 +100,32 @@ const Home = () => {
 
 
 
+            <div className="w-full  md:w-3/12 bg-gray-200  text-secondary overflow-y-auto flex flex-col">
+                <div className="h-28 md:h-64 flex-none border-b border-gray-400  flex flex-col">
+                    <Search/>
+                </div>
+
+                <div className="flex  flex-row md:flex-col space-y-4 p-4">
+                    <div className="flex flex-none h-64 bg-white border rounded p-4 justify-center items-center">
+                    <Card/>
+                    </div>
+
+                </div>
+                <div className="bg-blue-600 rounded-full w-16 h-16 m-4 flex items-center justify-center cursor-pointer shadow-xl">
+                {'svg'}
+            </div>
+            </div>
 
 
 
 
-        <div className="bg-blue-600 rounded-full w-16 h-16 m-4 flex items-center justify-center cursor-pointer shadow-xl">
-            {'svg'}
-        </div>
+
+
 
         
 </div>
+
+
 </div>
 
 
@@ -162,7 +167,9 @@ export default Home
         </div>
         */
 
-        /*        <div className="w-1/5 bg-gray-200 overflow-y-auto flex flex-col">
+        /*    
+        
+        <div className="w-1/5 bg-gray-200 overflow-y-auto flex flex-col">
       <div className="h-64 flex-none border-b border-gray-400 flex flex-col">
         hi
       </div>

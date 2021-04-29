@@ -28,8 +28,8 @@ const Hero =() => {
     
     return (
         <>
-                                    <div className="flex overflow-x-scroll pb-10 hide-scroll-bar">
-                                <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 " >
+                        <div className="flex overflow-x-scroll pb-3 hide-scroll-bar justify-center    items-stretch">
+                                <div className="flex flex-nowrap lg:ml-40 md:ml-10 ml-10 " >
                                 <div className="inline-block px-3">
                                     <div className="w-20 h-16 md:w-32 md:h-20 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                                         <div className="flex items-center"  aria-hidden="true">
