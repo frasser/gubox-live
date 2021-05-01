@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from './Modal'
-import '../styles/components/SearchModal.css'
+
 
 
 
@@ -46,18 +46,20 @@ console.log(listItems);
         <Modal 
             isOpen={props.isOpen}
             onClose={props.onClose}>
-                <div className="DeleteModal">
-                    <h1>My Devices</h1>
+                <div className="DeleteModal ">
+                    
+                    <h1 className="text-lg text-center font-extrabold text-gray-500 ">MY DEVICES</h1>
+                    
                     {devices.map(device =>(
-                        <li key={device.serial} className="list-devices">{device.name}</li>
+                        <li key={device.serial} className="list-none items-center content-center mt-1 mx-5 border-t-2 text-gray-500 font-medium border-solid border-gray-300 p-3 text-center justify-center   hover:text-white hover:bg-purple-400 cursor-pointer">{device.name}</li>
                         
                     ))
 
                     }
                     
-                    <div>
+                    <div className=" ">
                         
-                        <button onClick={props.onClose} className="btn-cancel">Cancel</button>
+                        <button onClick={props.onClose} className="btn-cancel bg-gray-500  font-semibold text-white hover:bg-gray-700 ">Cancel</button>
                     </div>
 
                 </div>

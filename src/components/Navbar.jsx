@@ -135,8 +135,8 @@ const Navbar =() =>{
                 
 
                           <aside className={drawerClass.join("")}>
-                          <button className="hidden md:block md:fixed p-2 text-white bg-purple-400 rounded-lg top-5  left-3 w-11 h-8" onClick={handleDrawer}>
-                            <img className="my-auto mr-0   transition-transform w-14 h-6 " src={Menu} alt="menu" />
+                          <button className="hidden md:block md:fixed p-2 text-white bg-purple-400 hover:bg-opacity-50 rounded-lg top-5  left-3 w-11 h-8" onClick={handleDrawer}>
+                            <img className="my-auto mr-0   transition-transform w-14 h-6   " src={Menu} alt="menu" />
                                 <span className="sr-only">Open menu</span>
                             </button>
                             

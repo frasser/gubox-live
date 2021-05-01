@@ -20,6 +20,7 @@
   /*grid-template-columns: minmax(auto, 1024px);
   justify-content: center;*/
 }
+
 .mainMin {
   /* position asolute lo restringe a la mitad de la pantalla*/
   position: relative;

@@ -32,6 +32,12 @@
 .mainOpen {
   @apply ml-0 !important  md:relative md:p-0 md:ml-44 md:bottom-0;
 }
+.boxOpen {
+  @apply h-80 md:h-96;
+}
+.boxMin {
+  @apply h-12;
+}
 
 .card {
   @apply rounded overflow-hidden shadow-lg;
