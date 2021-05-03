@@ -3,6 +3,7 @@ import AppContext from '../context/AppContext'
 import CardDevice from '../components/CardDevice'
 import DeviceForm from '../components/DeviceForm'
 import PageLoading from '../components/PageLoading'
+import Banner from '../components/Banner'
 
 const DevicesNew = () => {
     const {state} = useContext(AppContext)
@@ -48,6 +49,7 @@ const DevicesNew = () => {
     return (
    
         <div className={mainClass.join(" ")}>
+            <Banner/>
             
                     {stateCard.loading?
                     <PageLoading/>

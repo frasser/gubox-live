@@ -77,7 +77,7 @@ const Hero =() => {
                                                     <AiOutlineAlert size={SIZE} className=" mt-2"/>
                                                 
                                                     <div className="">
-                                                        <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Alerts</small>
+                                                        <small className="text-sm  md:text-base font-semibold text-gray-800 opacity-50 pr-1 md:pr-0 md:pl-3">Geofences</small>
                                                         <h6 className="mt-1 ml-2 font-medium text-bold  text-gray-800 opacity-50 pl-7">5</h6>
                                                     </div>
 

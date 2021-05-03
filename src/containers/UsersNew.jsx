@@ -3,6 +3,7 @@ import AppContext from '../context/AppContext'
 
 import UserForm from '../components/UserForm'
 import PageLoading from '../components/PageLoading'
+import Banner from '../components/Banner'
 
 
 const UsersNew =() => {
@@ -29,6 +30,7 @@ const UsersNew =() => {
     
     return (
         <div className={mainClass.join(" ")}>
+            <Banner/>
             
         {stateCard.loading?
         <PageLoading/>

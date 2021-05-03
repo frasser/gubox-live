@@ -22,6 +22,9 @@ module.exports = {
     extend: {
       opacity: ['responsive', 'hover', 'focus', 'disabled'],
       backgroundColor: ['responsive', 'hover'],
+      outline: ['hover', 'active'],
+      translate: ['motion-safe'],
+      textColor: ['visited'],
     },
   },
   plugins: [],

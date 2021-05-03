@@ -1,6 +1,7 @@
 import React,{useState,useContext} from 'react'
 import {Link} from 'react-router-dom'
 import AppContext from '../context/AppContext'
+import Banner from '../components/Banner'
 
 import DinamicTable from '../components/DinamicTable'
 
@@ -66,6 +67,7 @@ const handleCloseModal = e =>{
 
     return (
       <div className={mainClass.join(" ")}>
+        <Banner/>
         <div className="m-sm-30">
           <div>
               <Link to='/newUsers'>

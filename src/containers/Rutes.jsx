@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Banner from '../components/Banner'
 const Rutes = () => {
     return (
         <>
-           <h1>Routes</h1> 
+           <Banner/> 
         </>
     )
 }

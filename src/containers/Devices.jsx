@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import AppContext from '../context/AppContext'
 import '../styles/containers/Devices.css'
 import DinamicTable from '../components/DinamicTable'
+import Banner from '../components/Banner'
 
 
 
@@ -69,7 +70,9 @@ const Devices = () => {
     }
     return (
         <div className={mainClass.join(" ")}>
+           <Banner/>
             <div className="m-sm-30">
+             
             
             <div>
               <Link to='/newDevices'>

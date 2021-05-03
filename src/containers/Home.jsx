@@ -7,10 +7,7 @@ import Menu from '../assets/statics/menu_black.svg'
 
 import StateImg from '../assets/statics/movement.svg'
 import Temperature from '../assets/statics/high-temperature.svg'
-import Or from '../assets/statics/temperature_orange.svg'
-import Re from '../assets/statics/temperature_red.svg'
 
-import Speed1 from '../assets/statics/spe.svg'
 
 import Speed3 from '../assets/statics/speed-meter.svg'
 import Battery from '../assets/statics/battery-status.svg'
@@ -22,6 +19,7 @@ import Battery from '../assets/statics/battery-status.svg'
 import Card from '../components/Card'
 
 import Timeline from '../components/Timeline'
+import Messages from '../components/Messages'
 import Map from '../components/Map'
 import Search from '../components/Search'
 
@@ -31,11 +29,30 @@ import AppContext from '../context/AppContext'
 import Hero from '../components/Hero'
 import SearchBar from '../components/SearchBar'
 
+function useBoxProgress(){
+    const [currentStep,setCurrentStep]=useState(0);
+
+    function timeLineRender(){
+        setCurrentStep(0);
+    }
+    function messagesRender(){
+        setCurrentStep(1)
+    }
+
+    return [currentStep,timeLineRender,messagesRender]
+}
+
 const SIZE = "32px";
 const Home = () => {
 
     const {state,handleDrawer} = useContext(AppContext)
     const {side_state} = state
+    const steps =[<Timeline/>,<Messages/>];
+    let isFirst = currentStep === 0;
+    const [currentStep, timeLineRender, messagesRender] = useBoxProgress();
+    
+
+
 
     const [containerState, setContainerState] = useState({    loading:true,
         error:null,
@@ -68,6 +85,7 @@ const Home = () => {
       const handleCloseModal = e =>{
         setContainerState({modalIsOpen: false});
       };
+
     //const i =  Object.keys(side_state)[0]
 
    // const [state, setState] = useState({drawerPos: 1})
@@ -152,7 +170,7 @@ const Home = () => {
                         </div>
 
 
-                </div>
+                    </div>
             
         </div>
         
@@ -160,14 +178,14 @@ const Home = () => {
 
 
 
-            <div className="w-full  md:w-3/12 bg-gray-50  text-gray-500 relative overflow-y-auto flex flex-col">
+            <div className="w-full  md:w-2/6 bg-gray-50  text-gray-500 relative overflow-y-auto flex flex-col">
                 <div className="h-16 md:h-36 flex-none md:border-b  flex flex-col  md:pt-0">
                 
                 <Search/>
 
                 </div>
 
-                <div className="flex  overflow-x-scroll sm:pb-3 sm:hide-scroll-bar md:overflow-x-hidden md:flex-col md:space-y-4 p-4 mx-1 mt-0 mb-12 md:mb-0 md:mx-0 md:border-l-2" ref={cardsRef}>
+                <div className={`flex   sm:pb-3 sm:hide-scroll-bar md:overflow-x-hidden md:flex-col md:space-y-4 p-4 mx-1 mt-0 mb-12 md:mb-0 md:mx-0 md:border-l-2 ${toggleDiv ? 'overflow-x-hidden' : ' overflow-x-scroll '}`} ref={cardsRef}>
                    
                     <Card
                         value={'Moving'}
@@ -202,22 +220,38 @@ const Home = () => {
                     
 
                 </div>
-                <div className="flex   shadow-2xl  absolute  w-full bottom-0">
+                <div className="flex   shadow-2xl  absolute  w-full bottom-0 overflow-y-hidden z-20 md:overflow-x-hidden">
                     <div className={`flex flex-col w-screen   rounded-t-xl   mx-2 md:ml-2 md:mr-4 focus:shadow-outline bg-bannerscolor shadow-2xl ${toggleDiv ? 'boxOpen' : 'boxMin'}`}>
                         <div className="h-2 mx-8 border-b-2 pt-1 border-purple-400 border-opacity-75">
                             
                         </div>
                         <div className="flex flex-col  pt-1  justify-center center align-middle justify-items-center items-center  ">
-                            <button type="button" onClick={handleToggle}>
+                            <button type="button" onClick={handleToggle} className=" rounded-full hover:bg-gray-700 p-1 focus:outline-none">
                                 {
                                     toggleDiv 
                                     ?
-                                    <HiArrowCircleDown className="w-10 h-8  text-purple-400  hover:text-opacity-30 transition-shadow duration-300 ease-in-out cursor-pointer " />
+                                    <HiArrowCircleDown className="w-8 h-8  text-purple-400  hover:text-opacity-70 transition-shadow duration-300 ease-in-out cursor-pointer  " />
                                     :
-                                    <HiArrowCircleUp className="w-10 h-8  text-purple-400  hover:text-opacity-30 transition-shadow duration-300 ease-in-out cursor-pointer " />
+                                    <HiArrowCircleUp className="w-8 h-8  text-purple-400  hover:text-opacity-70 transition-shadow duration-300 ease-in-out cursor-pointer  " />
                                 }
                                 
                             </button>
+                            <div className="flex flex-row w-full">
+                                <div className="flex  w-1/2 self-center text-center center items-center justify-end mr-3">
+                            
+                                    <button type="button" className={`text-xs  font-semibold w-auto px-2 py-1 rounded-md  hover:text-purple-400 hover:bg-gray-900 focus:outline-none active:bg-gray-900 active:text-purple-400 ${!currentStep > 0 ? 'bg-gray-900 text-purple-400' : 'bg-gray-800 text-gray-500'}`} onClick={()=>timeLineRender()}>Timeline</button>
+                                </div>
+                                <div className="flex w-1/2">
+                                    <button type="button" className={`text-xs text-gray-500 font-semibold w-auto px-2 py-1 rounded-md  bg-gray-800 hover:text-purple-400 hover:bg-gray-900 focus:outline-none  visited:text-purple-400 ${!currentStep > 0 ? 'bg-gray-800 text-gray-500' : 'bg-gray-900 text-purple-400'}`} onClick={()=>messagesRender()}>Messages</button>
+                                </div>
+
+                            </div>
+                            <div className="flex flex-col  h-60 md:h-72 w-full px-2 md:px-1  md:-mr-4  ">
+                                <div className="mt-2 md:pr-0 w-full h-full bg-gray-700 overflow-y-scroll rounded-lg">
+                                    {steps[currentStep]}
+                                </div>
+
+                            </div>
 
                         </div>
 
