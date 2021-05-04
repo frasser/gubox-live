@@ -67,16 +67,19 @@ const handleCloseModal = e =>{
 
     return (
       <div className={mainClass.join(" ")}>
+      
         <Banner/>
-        <div className="m-sm-30">
-          <div>
-              <Link to='/newUsers'>
-                  <button className="MuiButtonBase-root MuiButton-root MuiButton-container mb-4 MuiButton-containedPrimary" tabIndex='0' type="button">
-                      <span className="MuiButton-label">Add New User</span>
-                      <span className="MuiTouchRipple-root"></span>
-                  </button>
-                  </Link>
-          </div> 
+        <div className="flex flex-col  w-full h-screen  bg-gray-100 ">
+          <div className=" flex flex-col w-full border-0   z-0  mt-1 md:mt-0 items-end p-4 md:pr-20">
+              <div className="flex  flex-col rounded-lg bg-gray-100 text-gray-600  w-32 ">
+                  <Link to='/newUsers'>
+                      <button className="hover:border-transparent hover:shadow-xl hover:bg-white w-full flex items-center justify-center rounded-lg border-2 border-dashed border-gray-200 text-sm md:text-base md:p-3 font-semibold py-4 focus:outline-none" tabIndex='0' type="button">
+                        Add New User
+                          
+                      </button>
+                      </Link>
+              </div> 
+          </div>
         
           <DinamicTable 
           HeadNames={metaH}
@@ -87,8 +90,8 @@ const handleCloseModal = e =>{
           belongsTo='user'
            />
           </div>
-
-      </div>
+        </div>
+     
     )
 }
 

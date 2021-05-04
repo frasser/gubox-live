@@ -14,7 +14,7 @@ import Rutes from '../containers/Rutes'
 
 import Layout from '../components/Layout'
 import NonAuthLayout from '../components/NonAuthLayout'
-import '../styles/global.css'
+
 
 /** las siguientes importaciones perteneces al contexto que se va a compartir en toda la app mediante el Provider y elcustom hook */
 import AppContext from '../context/AppContext'

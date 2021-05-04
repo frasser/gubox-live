@@ -54,8 +54,8 @@ const DevicesNew = () => {
                     {stateCard.loading?
                     <PageLoading/>
                     :   
-                    <div className="container">
-                        <div className="row">
+                   
+                        <div className="flex  w-full h-screen  bg-gray-100">
                             {/*<div className="col-6">
                                 <CardDevice 
                                 firstName={stateCard.form.firstName || 'DEVICE NAME '}
@@ -65,7 +65,7 @@ const DevicesNew = () => {
                                 iconUrl=""
                                 />
                     </div>*/}
-                            <div className="col-6">
+                            <div className="flex flex-col  w-full py-5 items-center ">
                                 <DeviceForm
                                 
                                 /*onChange={handleChange}
@@ -75,7 +75,7 @@ const DevicesNew = () => {
                                 />
                             </div>
                         </div>
-                    </div> 
+                     
                 }
                 
                 

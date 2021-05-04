@@ -1,7 +1,7 @@
 import React,{useState,useEffect, useRef} from 'react'
 import useEventListener from '../hooks/useEventListener'
 
-import '../styles/components/Picker.css'
+
 
 import Motorciclist from '../assets/statics/customMotorciclist.png'
 import Moto from '../assets/statics/customMoto.png'
@@ -21,9 +21,9 @@ const Picker = (props) => {
 // You can also pass refs
 const elementRef = useRef(null);
 useEventListener(elementRef, 'mousedown', handleElementClick);
-console.log(state);
+/*console.log(state);*/
 
-console.log(props.onSelect);
+/*console.log(props.onSelect);*/
 const handleElementClick =  ()=>{
     console.log('clickkk');
     setState({dropdownOpen: !state.dropdownOpen});
@@ -48,57 +48,7 @@ const handleElementClick =  ()=>{
         Print
     ];
 
-    /*const Icon = ({namesrc}) => {
-        return (
-            <span
-                className={`fa fa-${name.toLowerCase()} ${className ? className : ''}`}
-                {...rest}
-                aria-hidden="true"></span>
-        );
-    };*/
 
-    /**
- * Hook that alerts clicks outside of the passed ref
- */
-
-    /*
-
-function useOutsideAlerter(ref) {
-    useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        /*function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                alert("You clicked outside of me!");
-                console.log("You clicked outside of me!");
-            }
-        }
-
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-            console.log("You clicked outside of me!");
-        };
-    }, [ref]);
-}*/
-
-  /*  useEffect(() =>{
-
-        const {
-            defaultIcon
-        } = props;
-    
-        document.addEventListener('mousedown', handleClickOutside);
-        if (defaultIcon) {
-            setState(state =>({...state, selectedIcon: defaultIcon ? defaultIcon : defaultIcons[0]}));
-        }
-
-    },[]);*/
-    
 
 
 
@@ -116,6 +66,7 @@ function useOutsideAlerter(ref) {
 
 	const setSelectedIcon =(icon)  =>{
 		setState(state=>({...state, selectedIcon: icon}));
+        storeIcon()
 	}
 
     const storeIcon =() => {
@@ -133,10 +84,10 @@ function useOutsideAlerter(ref) {
 
 
     return (
-        <div className={`dropdown icon-picker ${state.dropdownOpen ? 'open' : ''}`} ref={elementRef}>
-        <button className={`${state.selectedIcon ? 'btn-con' : 'btn btn-default dropdown-toggle'}`} type="button" id="dropdownMenu1" onClick={() => toggleDropdown()}>
+        <div className={`relative hover:block my-1 ${state.dropdownOpen ? 'open' : ''}`} ref={elementRef}>
+        <button className={`focus:outline-none ${state.selectedIcon ? 'contents' : 'btn bg-white border-2 border-solid hover:border-purple-400 hover:text-purple-400 dropdown-toggle'}`} type="button" id="dropdownMenu1" onClick={() => toggleDropdown()}>
             {state.selectedIcon ?
-                <span className="icon-dropdown-text">
+                <span className="w-auto h-auto inline-block">
                     
                     
                     <img className="Badge_pin" src={state.selectedIcon} 
@@ -146,20 +97,20 @@ function useOutsideAlerter(ref) {
                 :
                 <span>Pick icon</span>
             }
-            <span className="caret"></span>
+            <span className="ml-3"></span>
         </button>
         {state.dropdownOpen ?
                 
-                <ul className="dropdown-menu" id="dropdownUL" aria-labelledby="dropdownMenu1" >
+                <ul className="w-72 h-80 px-2 mt-10 shadow-xl rounded-xl border-r border-l overflow-hidden bg-gray-50 absolute z-10 bottom-11 " id="dropdownUL" aria-labelledby="dropdownMenu1" >
 
                 
-                <ul className="icons">
+                <ul className="list-none p-1 mt-0  h-5/6 border-t-2 border-purple-400  ">
                     {componentIcons.map((icon, index) => {
                         return (
-                            <li className="lili"  key={index} onClick={() => setSelectedIcon(icon)  }>
-                                <span className={`icon-wrapper ${state.selectedIcon === icon ? 'selected' : ''}`}>
-                                    <span className="icon">
-                                    <img className="pin" src={icon} 
+                            <li className="float-left text-center p-5 relative w-10 m-4 "  key={index} onClick={() => setSelectedIcon(icon)  }>
+                                <span className={`absolute top-0 left-0 bottom-0 right-0 mt-0   ${state.selectedIcon === icon ? 'selected' : ''}`}>
+                                    <span className="absolute rounded-full bg-gray-100 w-14 h-14 hover:bg-gray-300 ">
+                                    <img className="m-auto" src={icon} 
                                         alt="pin" 
                                     />
                                         
@@ -169,9 +120,11 @@ function useOutsideAlerter(ref) {
                         );
                     })}
                 </ul>
-                <hr />
-                <button type="button" className="btn-cancel" onClick={() => clearSelected()}>Cancel</button>
-                <button type="button" className="btn-succes" onClick={() => storeIcon()}>Save</button>
+                
+                <div className="flex flex-col w-full  justify-items-center items-center mb-4 border-t ">
+                <button type="button" className="btn-next w-5/12 py-2 bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 hover:shadow-md focus:outline-none" onClick={() => clearSelected()}>Cancel</button>
+                </div>
+                
             </ul>
             
             : ''

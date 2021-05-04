@@ -4,8 +4,10 @@ import Menu from '../assets/statics/menu_black.svg'
 const Banner=()=> {
     const {state,handleDrawer} = useContext(AppContext)
     return (
-        <div className="flex flex-col h-36   absolute w-full  z-0 bg-bannerscolor ">
-                <div className="flex flex-col z-20 pt-4 text-white bg-bannerscolor">
+        <>
+        <div className="flex flex-col h-36   absolute w-full  z-0 bg-gradient-to-b from-gray-900 to-bannerscolor"></div>
+             <div className="flex flex-col overflow-y-auto h-full px-3 pb-2  md:pb-2 space-y-4">
+                <div className="flex flex-col z-20 pt-4 text-white   ">
 
                         
                     <button className=" fixed p-2 text-white bg-purple-400 rounded-lg top-5 right-5 md:hidden w-11 h-8" onClick={handleDrawer}>
@@ -22,6 +24,7 @@ const Banner=()=> {
                 </div>
             
         </div>
+        </>
     )
 }
 

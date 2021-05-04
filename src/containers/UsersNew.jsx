@@ -35,8 +35,8 @@ const UsersNew =() => {
         {stateCard.loading?
         <PageLoading/>
         :   
-        <div className="container">
-            <div className="row">
+        
+            <div className="flex  w-full h-screen  bg-gray-100">
                 {/*<div className="col-6">
                     <CardDevice 
                     firstName={stateCard.form.firstName || 'DEVICE NAME '}
@@ -46,7 +46,7 @@ const UsersNew =() => {
                     iconUrl=""
                     />
         </div>*/}
-                <div className="col-6">
+                <div className="flex flex-col  w-full py-5 items-center  ">
                     <UserForm
                     
                     /*onChange={handleChange}
@@ -56,7 +56,7 @@ const UsersNew =() => {
                     />
                 </div>
             </div>
-        </div> 
+        
     }
     
     

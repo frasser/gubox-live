@@ -36,8 +36,7 @@ const SearchModal =(props) => {
   <li>{device}</li>
  
 );
-console.log(listItems.length);
-console.log(listItems);
+
 
     return (
         
