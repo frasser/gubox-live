@@ -21,7 +21,7 @@ const MethodRegister =() => {
     const isLast2 = currentStep2 === steps2.length - 1;
     return (
         <>
-                            <div className="text-center mb-10"> 
+                            <div className="text-center mb-1"> 
                               
                                 <p className="text-realgrey font-semibold">You are registering as:</p>
                             </div>
@@ -32,7 +32,7 @@ const MethodRegister =() => {
                                 
 
                             </div>
-                            <div className="block my-8  pb-4">
+                            <div className="block my-2 md:my-6  pb-1 ">
                             {steps2[currentStep2]}
                                 <div className="border-t-2 py-2">
                                     {!isFirst2

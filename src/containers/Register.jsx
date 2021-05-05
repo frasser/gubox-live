@@ -62,7 +62,7 @@ function Register() {
         <>
             
             <div className="min-w-screen h-full bg-transparent bg-gray-50 flex items-center justify-center px-0 py-0">
-                <div className="bg-white text-gray-500  shadow-xl w-full   overflow-hidden">
+                <div className="bg-white text-gray-500   w-full   overflow-hidden">
                     <div className="md:flex w-full h-full  ">
                       <div className="md:block md:w-5/12 md:pt-12 ">
                         <div className=' md:w-full '>
@@ -72,20 +72,29 @@ function Register() {
                           />
                         </div>
 
-                          <div className="sm:w-full h-full  md:w-full   py-5 px-5 ">
+                          <div className="w-full      py-1 px-10 ">
                               {steps[currentStep]}
-                              <div className="flex items-center  justify-end ">
+                          </div>
+                              <div className="flex   w-full  justify-end  pr-10 ">
+                              
                               
                               {!isFirst 
                               ?
-                              <button className="btn-next w-20 font-semibold  " onClick={()=>goBack()}>Back</button> 
+                              <button className="font-bold text-center no-underline bg-white outline-none cursor-pointer rounded-lg border border-solid border-blue-500 text-blue-500 text-base py-2.5 px-3 block  " onClick={()=>goBack()}>Back</button> 
                               :
-                              <button className="btn-next w-20 font-semibold " onClick={()=>goForward()}>Next</button>
+                              <button className="btn-next " onClick={()=>goForward()}>Next</button>
                               }
                                   
                               </div>
+                              <div className=" flex  text-center w-full h-full justify-center bg-gray-100">
+                                <Link to="/login">
+                                  <span className="text-base text-blue-400 no-underline hover:text-blue-500" >
+                                    Ya tengo una cuenta
+                                  </span>
+                                </Link>
+                              </div>
                               
-                          </div>
+                          
                         </div>
                         <div className="hidden md:block w-full py-16 px-10 bg-bannerscolor  bg-opacity-90" /*style={{ backgroundImage: `url('${GridImg}')` }}*/ >
                             <div className="flex -my-6 mx-12 z-20 ">
