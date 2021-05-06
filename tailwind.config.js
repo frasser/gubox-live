@@ -21,10 +21,16 @@ module.exports = {
   variants: {
     extend: {
       opacity: ['responsive', 'hover', 'focus', 'disabled'],
-      backgroundColor: ['responsive', 'hover'],
+      backgroundColor: ['responsive', 'hover','group-focus','visited'],
       outline: ['hover', 'active'],
       translate: ['motion-safe'],
       textColor: ['visited'],
+      textDecoration: ['focus-visible'],
+      rotate: ['active', 'group-hover'],
+      transformOrigin: ['hover', 'focus'],
+      transform: ['hover', 'focus'],
+      transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
+      transitionDelay: ['hover', 'focus'],
     },
   },
   plugins: [],

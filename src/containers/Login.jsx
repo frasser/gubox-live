@@ -59,7 +59,7 @@ const Login =() =>{
                            
                                 <p className="FormInput-error"> </p>
                             </div>
-                            <button className="btn-next w-full mt-3"><span>Inicia sesión</span></button>
+                            <Link to="/"><button className="btn-next w-full mt-3"><span>Inicia sesión</span></button></Link>
                             <div className="mt-4 text-center"><Link to="/password/reset/"><span className="text-base text-blue-400 no-underline" >¿Olvidaste tu contraseña?</span></Link></div>
                         </form>
                     </div>

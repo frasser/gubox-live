@@ -30,7 +30,7 @@ const Search = () => {
  
             
                    
-              <div className="flex flex-row md:flex-col border-2 px-2 mx-1 md:mx-0 rounded-lg md:rounded-none md:rounded-b-lg shadow-lg bg-white md:pt-4 md:pb-3">
+              <div className="flex flex-row md:flex-col border-2 md:border-0 px-2 mx-1 md:mx-0 rounded-lg   shadow-lg bg-white md:pt-4 md:pb-3">
 
                         <div className=" flex  ">
                             <SearchBar

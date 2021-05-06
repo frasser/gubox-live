@@ -3,8 +3,8 @@ import { MdMemory,MdKeyboardArrowRight,MdSearch} from "react-icons/md";
 import { RiSignalTowerFill} from "react-icons/ri";
 import { AiOutlineAlert } from "react-icons/Ai";
 import {HiArrowCircleUp,HiArrowCircleDown} from "react-icons/hi"
-import Menu from '../assets/statics/menu_black.svg'
 
+import {RiMenuLine,RiCloseFill} from 'react-icons/ri'
 import StateImg from '../assets/statics/movement.svg'
 import Temperature from '../assets/statics/high-temperature.svg'
 
@@ -86,35 +86,14 @@ const Home = () => {
         setContainerState({modalIsOpen: false});
       };
 
-    //const i =  Object.keys(side_state)[0]
-
-   // const [state, setState] = useState({drawerPos: 1})
-
-   /*const changeSideState = payload =>{
-    setState({
-        ...state,
-        side_state:[...state.side_state, payload]
-    });
-}*/
-
+ 
 
     
 
-   // let drawerclassNameName = [];
     let className = [];
     let drawerClass = [];
     
-/*
-    if (side_state === 1) {
-     // drawerclassNameName.push("drawerMin");
-      className.push("mainMin");
-    } else if (side_state === 2) {
-    //  drawerclassNameName.push("drawerOpen");
-      className.push("mainOpen");
-    } else {
-      //drawerclassNameName = [];
-      className = [];
-    }*/
+
     if (side_state[1]) {
         className.push("mainOpen");
         drawerClass.push("drawerOpen");
@@ -136,14 +115,17 @@ const Home = () => {
     <div className={className.join(" ")}>
     <div className="bg-blue-400 md:h-screen flex flex-col md:flex-row flex-auto ">
         <div className="flex  md:flex-col relative  w-full bg-gray-100 shadow-xl  overflow-hidden">
-                <div className=" flex flex-col h-36   absolute w-full  z-0 bg-gradient-to-b from-gray-900 to-bannerscolor  "></div>
+                <div className=" flex flex-col h-36   absolute w-full mt-0.5 md:mx-0.5 rounded-3xl z-0 bg-gradient-to-b from-gray-900 to-bannerscolor  "></div>
                     <div className="flex flex-col overflow-y-auto h-full px-3 pb-2  md:pb-2 space-y-4">
                         <div className="flex flex-col z-20 pt-4 text-white ">
 
                         
-                            <button className=" fixed p-2 text-white bg-purple-400 rounded-lg top-5 right-5 md:hidden w-11 h-8" onClick={handleDrawer}>
-                            <img className="my-auto mr-0   transition-transform w-14 h-6 " src={Menu} alt="menu" />
-                                <span className="sr-only">Open menu</span>
+                            <button className=" fixed  text-white bg-purple-400 rounded-full top-5 right-5 md:hidden w-10 h-10 focus:outline-none" onClick={handleDrawer}>
+                                    {!side_state[1]? 
+                                    <RiMenuLine className="  w-10 h-6 text-white " />
+                                    : 
+                                    <RiCloseFill className="   w-10 h-6 text-white "/>
+                                    } 
                             </button>
                            
                             <div>
@@ -165,7 +147,7 @@ const Home = () => {
 
                         </div>
 
-                        <div className="border-0  h-96 md:h-screen w-full  md:w-full  shadow-md justify-center items-center">
+                        <div className="border-0  h-96 md:h-screen w-full p-1 rounded-xl bg-white  md:w-full  shadow-md justify-center items-center">
                                    <Map/>
                         </div>
 
@@ -179,7 +161,7 @@ const Home = () => {
 
 
             <div className="w-full  md:w-2/6 bg-gray-50  text-gray-500 relative overflow-y-auto flex flex-col">
-                <div className="h-16 md:h-36 flex-none md:border-b  flex flex-col  md:pt-0">
+                <div className="h-16 md:h-36 flex-none md:border-b bg-red-300 p-2  flex flex-col  ">
                 
                 <Search/>
 
@@ -284,49 +266,3 @@ const Home = () => {
 }
 
 export default Home
-/*
-        <div classNameNameName={className.join(" ")}>
-
-
-<Hero></Hero>
-            <div classNameNameName="main-container">
-                <div classNameNameName="main-items">
-                    <Search
-
-                    />
-                </div>
-                <div classNameNameName="main-items">
-                   <Map/>
-                </div>
-                <div classNameNameName="main-items">
-                    <Card/>
-                </div>
-                <div classNameNameName="main-items">
-                    <Timeline/>
-                </div>
-
-
-            </div>
-
-        </div>
-        */
-
-        /*    
-        
-        <div className="w-1/5 bg-gray-200 overflow-y-auto flex flex-col">
-      <div className="h-64 flex-none border-b border-gray-400 flex flex-col">
-        hi
-      </div>
-
-      <div className="flex flex-col space-y-4 p-4">
-        <div className="flex flex-none h-64 bg-white border rounded p-4 justify-center items-center">
-          card content
-        </div>
-        <div className="flex flex-none h-64 bg-white border rounded p-4 justify-center items-center">
-          card content
-        </div>
-        <div className="flex flex-none h-64 bg-white border rounded p-4 justify-center items-center">
-          card content
-        </div>
-      </div>
-    </div>*/

@@ -1,20 +1,21 @@
 import React , { useContext,useState, useEffect} from 'react'
 import {Link,useLocation} from 'react-router-dom'
-import Menu from '../assets/statics/menu_black.svg'
+
 import UserIcon from '../assets/statics/user-icon.png'
 import LiveLogo from '../assets/statics/gubox-live.svg'
-
+import "../styles/components/Navbar.css"
 
 import { MdDashboard,MdShowChart,
     MdGesture,MdMemory,
     MdGroup,MdInfo} from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
+import {RiMenuLine,RiMenuFoldFill,RiMenuUnfoldFill} from 'react-icons/ri'
     
-import '../styles/components/Navbar.css'
+
 import AppContext from '../context/AppContext'
 //import {Nav} from "../styles/components/navbar"
 
-const SIZE = "26px";
+const SIZE = "32px";
 const Navbar =() =>{
     const {state, handleDrawer } = useContext(AppContext)
 
@@ -53,141 +54,88 @@ const Navbar =() =>{
         drawerClass.push("drawerMin");
       }
 
-      /*if(!isLogin){
-          component = (
-            <>
-                <header className="navbar"> 
-                    {" "}
-                    
-                    <img className="navbar_img" src={Menu} alt="gubox logo" onClick={handleDrawer}/>
-                    {" "}
-                    <h3> Guboxlive</h3>{" "}
-                        <div className="header__menu">
-                            <div className="header__menu--profile">
-                                <img src={UserIcon} alt="user icon"/>
-                            </div>
-                        </div>
-                </header> 
-                      <aside className={drawerClass.join(" ")}>
-                            <ul>
-                                <Link to="/" >
-                                <li>
-                                    <MdDashboard className="aside_img" size={SIZE}/>
-                                    <span>Dashboard</span>                       
-                                </li>
-                                </Link>
-                                <Link to="/Users">
-                                <li>                    
-                                    <MdGroup className="aside_img" size={SIZE} />
-                                    <span>Users</span>                    
-                                </li>
-                                </Link>
-                                <Link to="/Devices">
-                                <li>
-                                    <MdMemory className="aside_img" size={SIZE}/>
-                                    <span>Devices</span>
-                                </li>
-                                </Link>
-                                <Link to="/charts">
-                                    <li>
-                                        <MdShowChart className="aside_img" size={SIZE}>rutas</MdShowChart>
-                                        <span>Charts</span>
-                                    </li>
-                                </Link>
-                                <Link to="/routes">
-                                    <li>
-                                        <MdGesture className="aside_img" size={SIZE}>rutas</MdGesture>
-                                        <span>Rutas</span>
-                                    </li>
-                                </Link>
-                            </ul>
-                        </aside>
-        
-              </>
-          )
-      }else{
-          component = (
-              <>
-                <header className="navbar"> 
  
-                 <h3> Guboxlive</h3>{" "}
-                    <div className="header__menu">
-                        <div className="header__menu--profile">
-                            <img src={UserIcon} alt="user icon"/>
-                        </div>
-                    </div>
-            </header>   
-              </>
-          )
-      }*/
-      
-/*            {isLogin? 
-
-            
-            ''
-            
-            
-            : console.log('negativo')}*/
 
     return (
-        <div>
+        <div className="flex  absolute">
 
                 
+                    
+                    <aside className={`overflow-x-hidden fixed top-0 left-0 bottom-0 z-30 bg-bannerscolor rounded-tr-3xl rounded-br-3xl   ${!side_state[1]? 'md:w-16 w-0' : 'w-44'}  `}>
+                       
+                            <div className={` flex flex-col  focus:outline-none relative w-full bg-purple-600 ${!side_state[1]? '': '' }`}>
+                                                <button className={`transform motion-safe:hover:scale-110 hidden md:block md:fixed text-center items-center text-white focus:outline-none  rounded-r-full top-5   bg-gray-600  ${!side_state[1]? '':'ease-in-out delay-700'} w-10 h-10 `} onClick={handleDrawer}>
+                                                {!side_state[1]? 
+                                                <RiMenuUnfoldFill className="   py-0.5    w-10 h-6  text-white " />
+                                                : 
+                                                <RiMenuFoldFill className="py-0.5    w-10 h-6  text-white "/>
+                                                } 
+                                                </button>
+                                            
+                                                
+                            </div> 
+                                
 
-                          <aside className={drawerClass.join("")}>
-                          <button className="hidden md:block md:fixed p-2 text-white bg-purple-400 hover:bg-opacity-50 rounded-lg top-5  left-3 w-11 h-8" onClick={handleDrawer}>
-                            <img className="my-auto mr-0   transition-transform w-14 h-6   " src={Menu} alt="menu" />
-                                <span className="sr-only">Open menu</span>
-                            </button>
+
+
+
+
+
                             
-                                <ul className="md:pt-2 md:mt-20 list-none p-0 no-underline  ">
-                                    <Link to="/" >
-                                    <li>
-                                        <MdDashboard className="md:mr-4 " size={SIZE}/>
-                                        <span>Dashboard</span>                       
-                                    </li>
-                                    </Link>
-                                    <Link to="/Users">
-                                    <li>                    
-                                        <MdGroup className="md:mr-4" size={SIZE} />
-                                        <span>Users</span>                    
-                                    </li>
-                                    </Link>
-                                    <Link to="/Devices">
-                                    <li>
-                                        <MdMemory className="md:mr-4" size={SIZE}/>
-                                        <span>Devices</span>
-                                    </li>
-                                    </Link>
-                                    <Link to="/charts">
-                                        <li>
-                                            <MdShowChart className="md:mr-4" size={SIZE}>rutas</MdShowChart>
-                                            <span>Charts</span>
+                                    <ul className="md:pt-2 md:mt-20 list-none border-t border-gray-800 py-10 md:py-0 no-underline    ">
+                                        <Link to="/" >
+                                        <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">
+                                            <MdDashboard className="md:mr-4  text-gray-100 " size={SIZE}/>
+                                            <span className="font-semibold mx-2 text-gray-100">Dashboard</span>                       
                                         </li>
-                                    </Link>
-                                    <Link to="/routes">
-                                        <li>
-                                            <MdGesture className="md:mr-4" size={SIZE}>rutas</MdGesture>
-                                            <span>Rutas</span>
+                                        </Link>
+                                        <Link to="/Users">
+                                        <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">                    
+                                            <MdGroup className="md:mr-4 text-gray-100" size={SIZE} />
+                                            <span className="font-semibold mx-2 text-gray-100">Users</span>                    
                                         </li>
-                                    </Link>
-                                    <div className="mt-36">
-                                    <Link to="/info">
-                                        <li >
-                                            <MdInfo className="md:mr-4" size={SIZE}>info</MdInfo>
-                                            <span>Info</span>
+                                        </Link>
+                                        <Link to="/Devices">
+                                        <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">
+                                            <MdMemory className="md:mr-4 text-gray-100" size={SIZE}/>
+                                            <span className="font-semibold mx-2 text-gray-100">Devices</span>
                                         </li>
-                                    </Link>
-                                    <Link to="/login">
-                                        <li>
-                                            <BiLogOut className="md:mr-4" size={SIZE}>logout</BiLogOut>
-                                            <span>Logout</span>
-                                        </li>
-                                    </Link>
-                                    </div>
-                                </ul>
-                            </aside>
+                                        </Link>
+                                        <Link to="/charts">
+                                            <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">
+                                                <MdShowChart className="md:mr-4 text-gray-100" size={SIZE}>rutas</MdShowChart>
+                                                <span className="font-semibold mx-2 text-gray-100">Charts</span>
+                                            </li>
+                                        </Link>
+                                        <Link to="/routes">
+                                            <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">
+                                                <MdGesture className="md:mr-4 text-gray-100" size={SIZE}>rutas</MdGesture>
+                                                <span className="font-semibold mx-2 text-gray-100">Rutas</span>
+                                            </li>
+                                        </Link>
+                                        <div className="mt-36">
+                                        <Link to="/info">
+                                            <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-purple-400">
+                                                <MdInfo className="md:mr-4 text-gray-100" size={SIZE}>info</MdInfo>
+                                                <span className="font-semibold mx-2 text-gray-100">Info</span>
+                                            </li>
+                                        </Link>
+                                        <Link to="/login">
+                                            <li className="inline-flex items-center py-3 pr-0 pl-4 rounded-r-full border-l-4 border-bannerscolor  hover:bg-gray-800 hover:border-red-700 ">
+                                                <BiLogOut className="md:mr-4 text-gray-100 " size={SIZE}>logout</BiLogOut>
+                                                <span className="font-semibold mx-2 text-gray-100">Logout</span>
+                                            </li>
+                                        </Link>
+                                        </div>
+                                    </ul>
+                                
+                                    
+
+                                    
+                        
             
+                    </aside>
+
  
         </div>
     )
