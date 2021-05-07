@@ -14,6 +14,14 @@ import Battery from '../assets/statics/battery-status.svg'
 
 
 
+import {GiBattery75} from 'react-icons/gi'
+import {RiDragMoveLine} from 'react-icons/ri'
+import {IoMdSpeedometer} from 'react-icons/io'
+import {FaTemperatureHigh} from 'react-icons/fa'
+
+
+
+
 
 
 import Card from '../components/Card'
@@ -113,7 +121,7 @@ const Home = () => {
 
     return (    
     <div className={className.join(" ")}>
-    <div className="bg-blue-400 md:h-screen flex flex-col md:flex-row flex-auto ">
+    <div className=" md:h-screen flex flex-col md:flex-row flex-auto ">
         <div className="flex  md:flex-col relative  w-full bg-gray-100 shadow-xl  overflow-hidden">
                 <div className=" flex flex-col h-36   absolute w-full mt-0.5 md:mx-0.5 rounded-3xl z-0 bg-gradient-to-b from-gray-900 to-bannerscolor  "></div>
                     <div className="flex flex-col overflow-y-auto h-full px-3 pb-2  md:pb-2 space-y-4">
@@ -160,28 +168,28 @@ const Home = () => {
 
 
 
-            <div className="w-full  md:w-2/6 bg-gray-50  text-gray-500 relative overflow-y-auto flex flex-col">
-                <div className="h-16 md:h-36 flex-none md:border-b bg-red-300 p-2  flex flex-col  ">
+            <div className="w-full  md:w-2/6 bg-gray-100  text-gray-500 relative overflow-y-auto flex flex-col">
+                <div className="h-16 md:h-36 flex-none md:mb-2  p-1 md:pt-0.5  flex flex-col  ">
                 
                 <Search/>
 
                 </div>
 
-                <div className={`flex   sm:pb-3 sm:hide-scroll-bar md:overflow-x-hidden md:flex-col md:space-y-4 p-4 mx-1 mt-0 mb-12 md:mb-0 md:mx-0 md:border-l-2 ${toggleDiv ? 'overflow-x-hidden' : ' overflow-x-scroll '}`} ref={cardsRef}>
+                <div className={`flex    sm:hide-scroll-bar md:overflow-x-hidden md:flex-col md:space-y-4 p-4 mx-1 mt-0 mb-12 md:mb-0  md:mx-0 md:pb-14 ${toggleDiv ? 'overflow-x-hidden' : ' overflow-x-scroll '}`} ref={cardsRef}>
                    
                     <Card
                         value={'Moving'}
                         unity={''}
                         time={'5'}
-                        icon={StateImg}
+                        icon= {<RiDragMoveLine className="w-8 h-6  md:w-10 md:h-8 text-purple-400"/>}
                     />
                     
                     
                     <Card
-                                            value={'30.0'}
-                                            unity={'KM/H'}
+                                            value={'30'}
+                                            unity={'K/H'}
                                             time={'3'}
-                                            icon={Speed3}
+                                            icon={<IoMdSpeedometer className="w-8 h-6  md:w-10 md:h-8 text-purple-400"/>}
                     />
                     
                     
@@ -189,7 +197,7 @@ const Home = () => {
                                             value={'18'}
                                             unity={'°C'}
                                             time={'5'}
-                                            icon={Temperature}
+                                            icon={<FaTemperatureHigh className="w-8 h-6 md:w-10 md:h-8 text-purple-400"/>}
                     />
                     
                     
@@ -197,24 +205,24 @@ const Home = () => {
                                             value={'3.2'}
                                             unity={'V'}
                                             time={'5'}
-                                            icon={Battery}
+                                            icon={<GiBattery75 className="w-8 h-6  md:w-10 md:h-8 text-purple-400"/>}
                     />
                     
 
                 </div>
                 <div className="flex   shadow-2xl  absolute  w-full bottom-0 overflow-y-hidden z-20 md:overflow-x-hidden">
-                    <div className={`flex flex-col w-screen   rounded-t-xl   mx-2 md:ml-2 md:mr-4 focus:shadow-outline bg-bannerscolor shadow-2xl ${toggleDiv ? 'boxOpen' : 'boxMin'}`}>
-                        <div className="h-2 mx-8 border-b-2 pt-1 border-purple-400 border-opacity-75">
+                    <div className={`flex flex-col w-screen   rounded-t-xl border-l-2   mx-2 md:ml-2 md:mr-4 focus:shadow-outline bg-gradient-to-b from-gray-900 to-bannerscolor shadow-2xl ${toggleDiv ? 'boxOpen' : 'boxMin'}`}>
+                        <div className="h-2 mx-8 border-b-2 pt-1 border-purple-400  ">
                             
                         </div>
                         <div className="flex flex-col  pt-1  justify-center center align-middle justify-items-center items-center  ">
-                            <button type="button" onClick={handleToggle} className=" rounded-full hover:bg-gray-700 p-1 focus:outline-none">
+                            <button type="button" onClick={handleToggle} className=" rounded-full transform motion-safe hover:scale-110 p-1 focus:outline-none">
                                 {
                                     toggleDiv 
                                     ?
-                                    <HiArrowCircleDown className="w-8 h-8  text-purple-400  hover:text-opacity-70 transition-shadow duration-300 ease-in-out cursor-pointer  " />
+                                    <HiArrowCircleDown className="w-8 h-8  text-purple-400   transition-shadow duration-300 ease-in-out cursor-pointer  " />
                                     :
-                                    <HiArrowCircleUp className="w-8 h-8  text-purple-400  hover:text-opacity-70 transition-shadow duration-300 ease-in-out cursor-pointer  " />
+                                    <HiArrowCircleUp className="w-8 h-8  text-purple-400  transition-shadow duration-300 ease-in-out cursor-pointer  " />
                                 }
                                 
                             </button>
