@@ -20,6 +20,14 @@
   /*grid-template-columns: minmax(auto, 1024px);
   justify-content: center;*/
 }
+.mainROpen {
+  margin-right: 340px;
+  transition: margin-right 0.5s ease-in-out;
+}
+.mainRMin {
+  margin-right: 0px;
+  transition: margin-right 0.5s ease-in-out;
+}
 
 .mainMin {
   /* position asolute lo restringe a la mitad de la pantalla*/
@@ -43,6 +51,7 @@
   color: white;
   transition: margin-left 0.5s ease-in-out;
 }
+
 .m-sm-30 {
   margin: 0px 20px;
 }

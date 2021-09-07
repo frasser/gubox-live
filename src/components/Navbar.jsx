@@ -61,7 +61,7 @@ const Navbar =() =>{
 
                 
                     
-                    <aside className={`overflow-x-hidden fixed top-0 left-0 bottom-0 z-30 bg-bannerscolor rounded-tr-3xl rounded-br-3xl   ${!side_state[1]? 'md:w-16 w-0' : 'w-44'}  `}>
+                    <aside className={`overflow-x-hidden fixed top-0 left-0 bottom-0 z-30 bg-bannerscolor rounded-tr-3xl  rounded-br-3xl   ${!side_state[1]? 'md:w-16 w-0' : 'w-44'}  `}>
                        
                             <div className={` flex flex-col  focus:outline-none relative w-full  ${!side_state[1]? '': '' }`}>
                                                 <button className={`transform motion-safe hover:scale-125 hidden md:block md:fixed text-center items-center  focus:outline-none  rounded-r-full top-5   bg-gray-600 hover:bg-gray-700 w-10 h-10 `} onClick={handleDrawer}>

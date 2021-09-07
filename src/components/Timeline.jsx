@@ -10,8 +10,8 @@ const Timeline = (props) => {
   
     return (
         <>
-        <div className="container">
-          <div className="flex flex-col  mx-auto p-2 text-blue-50 ">
+        <div className="container  h-full">
+          <div className="flex flex-col  mx-auto p-2 text-blue-50  ">
           
            
             
@@ -70,6 +70,16 @@ const Timeline = (props) => {
                 </div>
 
             </div>
+
+
+
+
+
+
+
+
+
+
 
             
 
